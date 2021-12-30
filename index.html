@@ -1,7 +1,40 @@
 <html>
+  <head>
+    <style>
+      body {
+        font-family: monospace;
+        background: #222;
+        margin: 0;
+        color: white;
+      }
+      h1 {
+        display: block;
+        font-size: 1rem;
+        margin: 1rem 0 2rem;
+      }
+      code {
+        display: block;
+        border-radius: 3px;
+      }
+      .container {
+        width: 500px;
+        margin: 0 auto;
+      }
+      .prompt-preview {
+        background: #111;
+        padding: 2rem;
+      }
+    </style>
+  </head>
   <body>
-    <div>
-      root@host ~/path/to/dir $
+    <div class="container">
+      <h1>Bash prompt generator</h1>
+
+      <code class="prompt-preview">
+        <span>root@host</span>
+        <span>~/path/to/dir</span>
+        <span>$</span>
+      </code>
     </div>
   </body>
 </html>
