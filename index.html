@@ -15,6 +15,7 @@
       code {
         display: block;
         border-radius: 3px;
+        font-size: 1rem;
       }
       .container {
         width: 500px;
@@ -24,6 +25,10 @@
         background: #111;
         padding: 2rem;
       }
+      .legend {
+        margin-top: 3rem;
+        line-height: 1.2rem;
+      }
     </style>
   </head>
   <body>
@@ -31,10 +36,22 @@
       <h1>Bash prompt generator</h1>
 
       <code class="prompt-preview">
-        <span>root@host</span>
-        <span>~/path/to/dir</span>
-        <span>$</span>
+        <span class="username"
+        >root</span><span class="separator"
+        >@</span><span class="hostname"
+        >host</span>
+        <span class="relative-dir"
+        >~/path/to/dir</span>
+        <span class="cmd-separator"
+        >$</span>
       </code>
+
+      <pre class="legend">
+        \u    username       root
+        \h    hostname       host
+        \w    relative dir   ~/path/to/dir
+      </pre>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>
