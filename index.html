@@ -1,35 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <style>
-      body {
-        font-family: monospace;
-        background: #222;
-        margin: 0;
-        color: white;
-      }
-      h1 {
-        display: block;
-        font-size: 1rem;
-        margin: 1rem 0 2rem;
-      }
-      code {
-        display: block;
-        border-radius: 3px;
-        font-size: 1rem;
-      }
-      .container {
-        width: 500px;
-        margin: 0 auto;
-      }
-      .prompt-preview {
-        background: #111;
-        padding: 2rem;
-      }
-      .legend {
-        margin-top: 3rem;
-        line-height: 1.2rem;
-      }
-    </style>
+    <title>Bash prompt generator</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="container">
@@ -44,6 +17,11 @@
         >~/path/to/dir</span>
         <span class="cmd-separator"
         >$</span>
+      </code>
+
+      <code class="prompt-ps1">
+        PS1="\[$(tput setaf 226\]\u\[$(tput setaf 220)\]@\[$(tput setaf 214)\]\h
+          \[$(tput setaf 226)\]\w \[$(tput sgr0)\]$ "
       </code>
 
       <pre class="legend">

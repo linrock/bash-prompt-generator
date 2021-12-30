@@ -1,0 +1,33 @@
+body {
+  font-family: monospace;
+  background: #222;
+  margin: 0;
+  color: white;
+}
+h1 {
+  display: block;
+  font-size: 1rem;
+  margin: 1rem 0 2rem;
+}
+code {
+  display: block;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+.container {
+  width: 500px;
+  margin: 0 auto;
+}
+.prompt-preview {
+  background: #111;
+  padding: 2rem;
+}
+.prompt-ps1 {
+  background: #111;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+.legend {
+  margin-top: 3rem;
+  line-height: 1.2rem;
+}
