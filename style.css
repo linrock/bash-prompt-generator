@@ -41,12 +41,14 @@ main {
   display: flex;
 }
 .colors-256 {
-  width: 15rem;
 }
 .square {
   width: 1.5rem;
   aspect-ratio: 1;
   float: left;
+}
+.clear-left {
+  clear: left;
 }
 .color-choice {
   display: flex;

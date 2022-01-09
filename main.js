@@ -62,8 +62,25 @@
     cmdSeparator.style.color = '#fff';
 
     let html = '';
-    for (let i = 0; i < 256; i++) {
-      html += `<div class="square" style="background: ${COLORS[i]}"></div>`
+    // 2 rows of 8 for the first 16 basic colors
+    for (let j = 0; j < 2; j++) {
+      for (let i = 0; i < 8; i++) {
+        html += `<div class="square" style="background: ${COLORS[j*8 + i]}"></div>`
+      }
+      html += '<div class="clear-left"></div>';
+    }
+    // 12 rows of length 12
+    for (let j = 0; j < 12; j++) {
+      for (let i = 0; i < 12; i++) {
+        html += `<div class="square" style="background: ${COLORS[16 + j*18 + i]}"></div>`
+      }
+      html += '<div class="clear-left"></div>';
+    }
+    for (let j = 0; j < 2; j++) {
+      for (let i = 0; i < 12; i++) {
+        html += `<div class="square" style="background: ${COLORS[232 + j*12 + i]}"></div>`
+      }
+      html += '<div class="clear-left"></div>';
     }
     document.querySelector('.colors-256').innerHTML = html;
   }
