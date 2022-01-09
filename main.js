@@ -60,6 +60,12 @@
 
     const cmdSeparator = document.querySelector(".cmd-separator");
     cmdSeparator.style.color = '#fff';
+
+    let html = '';
+    for (let i = 0; i < 256; i++) {
+      html += `<div class="square" style="background: ${COLORS[i]}"></div>`
+    }
+    document.querySelector('.colors-256').innerHTML = html;
   }
 
   renderPreviewAndPs1();

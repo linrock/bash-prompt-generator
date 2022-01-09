@@ -18,6 +18,7 @@ input[type="number"] {
   background: black;
   border: none;
   font-size: 1rem;
+  font-family: monospace;
   padding: 0.5rem 1rem;
 }
 code {
@@ -36,8 +37,20 @@ main {
   width: 500px;
   margin: 0 auto;
 }
+.color-wrapper {
+  display: flex;
+}
+.colors-256 {
+  width: 15rem;
+}
+.square {
+  width: 1.5rem;
+  aspect-ratio: 1;
+  float: left;
+}
 .color-choice {
   display: flex;
+  margin-right: 3rem;
 }
 .color-preview {
   width: 2rem;
