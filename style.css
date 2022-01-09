@@ -2,12 +2,13 @@ body {
   font-family: monospace;
   background: #222;
   margin: 0;
+  padding: 0;
   color: white;
 }
 h1, h2 {
   display: block;
   font-size: 1rem;
-  margin: 1rem 0 2rem;
+  padding: 1rem 0 2rem;
 }
 h2 {
   opacity: 0.6;
@@ -27,6 +28,10 @@ code {
 section {
   margin: 3rem 0 4rem;
 }
+main {
+  height: 100vh;
+  background: #1c1c1c;
+}
 .container {
   width: 500px;
   margin: 0 auto;
@@ -35,7 +40,7 @@ section {
   display: flex;
 }
 .color-preview {
-  width: 1rem;
+  width: 2rem;
   aspect-ratio: 1;
 }
 .prompt-preview {
