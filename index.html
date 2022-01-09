@@ -20,8 +20,8 @@
       </code>
 
       <code class="prompt-ps1">
-        PS1="\[$(tput setaf 226)\]\u\[$(tput setaf 220)\]@\[$(tput setaf 214)\]\h
-          \[$(tput setaf 33)\]\w \[$(tput sgr0)\]$ "
+        PS1="\[$(tput setaf <span class="ps1-username-color">226</span>)\]\u\[$(tput setaf <span class="ps1-at-color">220</span>)\]@\[$(tput setaf <span class="ps1-hostname-color">214</span>)\]\h
+          \[$(tput setaf <span class="ps1-relative-dir-color">33</span>)\]\w \[$(tput sgr0)\]$ "
       </code>
 
       <pre class="legend">
@@ -29,6 +29,11 @@
         \h    hostname       host
         \w    relative dir   ~/path/to/dir
       </pre>
+
+      <code class="prompt-ps1">
+        PS1="\[$(tput setaf 226)\]\u\[$(tput setaf 220)\]@\[$(tput setaf 214)\]\h
+          \[$(tput setaf 33)\]\w \[$(tput sgr0)\]$ "
+      </code>
     </div>
     <script src="colors.js"></script>
     <script src="main.js"></script>
