@@ -8,10 +8,25 @@
     <div class="container">
       <h1>Bash prompt generator</h1>
 
-      <input type="number" value="226" min="0" max="255" id="color0" />
-      <input type="number" value="220" min="0" max="255" id="color1" />
-      <input type="number" value="214" min="0" max="255" id="color2" />
-      <input type="number" value="33" min="0" max="255" id="color3" />
+      <h2>Customize colors</h2>
+      <div class="color-choice">
+        <input type="number" value="226" min="0" max="255" id="color0" />
+        <div class="color-preview" id="color0-preview"></div>
+      </div>
+      <div class="color-choice">
+        <input type="number" value="220" min="0" max="255" id="color1" />
+        <div class="color-preview" id="color1-preview"></div>
+      </div>
+      <div class="color-choice">
+        <input type="number" value="214" min="0" max="255" id="color2" />
+        <div class="color-preview" id="color2-preview"></div>
+      </div>
+      <div class="color-choice">
+        <input type="number" value="33" min="0" max="255" id="color3" />
+        <div class="color-preview" id="color3-preview"></div>
+      </div>
+      <br>
+      <br>
 
       <code class="prompt-preview">
         <span class="username"

@@ -4,7 +4,7 @@ body {
   margin: 0;
   color: white;
 }
-h1 {
+h1, h2 {
   display: block;
   font-size: 1rem;
   margin: 1rem 0 2rem;
@@ -24,6 +24,13 @@ code {
 .container {
   width: 500px;
   margin: 0 auto;
+}
+.color-choice {
+  display: flex;
+}
+.color-preview {
+  width: 1rem;
+  aspect-ratio: 1;
 }
 .prompt-preview {
   background: #111;
