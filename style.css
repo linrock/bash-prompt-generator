@@ -9,6 +9,9 @@ h1, h2 {
   font-size: 1rem;
   margin: 1rem 0 2rem;
 }
+h2 {
+  opacity: 0.6;
+}
 input[type="number"] {
   color: white;
   background: black;
@@ -20,6 +23,9 @@ code {
   display: block;
   border-radius: 3px;
   font-size: 1rem;
+}
+section {
+  margin: 3rem 0 4rem;
 }
 .container {
   width: 500px;
@@ -42,6 +48,9 @@ code {
   margin-top: 2rem;
 }
 .legend {
+  font-family: monospace;
   margin-top: 3rem;
+  font-size: 1rem;
   line-height: 1.2rem;
+  padding: 2rem;
 }

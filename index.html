@@ -8,52 +8,63 @@
     <div class="container">
       <h1>Bash prompt generator</h1>
 
-      <h2>Customize colors</h2>
-      <div class="color-choice">
-        <input type="number" value="226" min="0" max="255" id="color0" />
-        <div class="color-preview" id="color0-preview"></div>
-      </div>
-      <div class="color-choice">
-        <input type="number" value="220" min="0" max="255" id="color1" />
-        <div class="color-preview" id="color1-preview"></div>
-      </div>
-      <div class="color-choice">
-        <input type="number" value="214" min="0" max="255" id="color2" />
-        <div class="color-preview" id="color2-preview"></div>
-      </div>
-      <div class="color-choice">
-        <input type="number" value="33" min="0" max="255" id="color3" />
-        <div class="color-preview" id="color3-preview"></div>
-      </div>
-      <br>
-      <br>
+      <section>
+        <h2>Bash prompt preview</h2>
+        <code class="prompt-preview">
+          <span class="username"
+          >root</span><span class="separator"
+          >@</span><span class="hostname"
+          >host</span>
+          <span class="relative-dir"
+          >~/path/to/dir</span>
+          <span class="cmd-separator"
+          >$</span>
+        </code>
+      </section>
 
-      <code class="prompt-preview">
-        <span class="username"
-        >root</span><span class="separator"
-        >@</span><span class="hostname"
-        >host</span>
-        <span class="relative-dir"
-        >~/path/to/dir</span>
-        <span class="cmd-separator"
-        >$</span>
-      </code>
+      <section>
+        <h2>Customize colors</h2>
+        <div class="color-choice">
+          <input type="number" value="226" min="0" max="255" id="color0" />
+          <div class="color-preview" id="color0-preview"></div>
+        </div>
+        <div class="color-choice">
+          <input type="number" value="220" min="0" max="255" id="color1" />
+          <div class="color-preview" id="color1-preview"></div>
+        </div>
+        <div class="color-choice">
+          <input type="number" value="214" min="0" max="255" id="color2" />
+          <div class="color-preview" id="color2-preview"></div>
+        </div>
+        <div class="color-choice">
+          <input type="number" value="33" min="0" max="255" id="color3" />
+          <div class="color-preview" id="color3-preview"></div>
+        </div>
+      </section>
 
-      <code class="prompt-ps1">
-        PS1="\[$(tput setaf <span class="ps1-username-color">226</span>)\]\u\[$(tput setaf <span class="ps1-at-color">220</span>)\]@\[$(tput setaf <span class="ps1-hostname-color">214</span>)\]\h
-          \[$(tput setaf <span class="ps1-relative-dir-color">33</span>)\]\w \[$(tput sgr0)\]$ "
-      </code>
+      <section>
+        <h2>Bash prompt PS1</h2>
+        <code class="prompt-ps1">
+          PS1="\[$(tput setaf <span class="ps1-username-color">226</span>)\]\u\[$(tput setaf <span class="ps1-at-color">220</span>)\]@\[$(tput setaf <span class="ps1-hostname-color">214</span>)\]\h
+            \[$(tput setaf <span class="ps1-relative-dir-color">33</span>)\]\w \[$(tput sgr0)\]$ "
+        </code>
+      </section>
 
       <pre class="legend">
-        \u    username       root
-        \h    hostname       host
-        \w    relative dir   ~/path/to/dir
+\u    username       root
+\h    hostname       host
+\w    relative dir   ~/path/to/dir
       </pre>
 
-      <code class="prompt-ps1">
+      <code class="prompt-ps1" style="display: none">
         PS1="\[$(tput setaf 226)\]\u\[$(tput setaf 220)\]@\[$(tput setaf 214)\]\h
           \[$(tput setaf 33)\]\w \[$(tput sgr0)\]$ "
       </code>
+
+      <section>
+        <h2>Resources</h2>
+        <a href="https://www.man7.org/linux/man-pages/man1/bash.1.html#PROMPTING">Bash prompt variables</a>
+      </section>
     </div>
     <script src="colors.js"></script>
     <script src="main.js"></script>
