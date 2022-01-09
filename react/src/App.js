@@ -1,5 +1,38 @@
 import { useState } from 'react';
+
+import { COLORS } from './colors';
 import './App.css';
+
+function Squares256() {
+  // build html for the 256 color squares
+  let elements = [];
+
+  // 2 rows of 8 for the first 16 basic colors
+  for (let j = 0; j < 2; j++) {
+    for (let i = 0; i < 8; i++) {
+      const code = j*8 + i;
+      elements.push(<div className="square" style={{ background: COLORS[code] }} data-code={code}></div>);
+    }
+    elements.push(<div className="clear-left"></div>);
+  }
+  // 12 rows of length 12
+  for (let j = 0; j < 18; j++) {
+    for (let i = 0; i < 12; i++) {
+      const code = 16 + j*12 + i;
+      elements.push(<div className="square" style={{ background: COLORS[code] }} data-code={code}></div>);
+    }
+    elements.push(<div className="clear-left"></div>);
+  }
+  for (let j = 0; j < 2; j++) {
+    for (let i = 0; i < 12; i++) {
+      const code = 232 + j*12 + i;
+      elements.push(<div className="square" style={{ background: COLORS[code] }} data-code={code}></div>);
+    }
+    elements.push(<div className="clear-left"></div>);
+  }
+  return <>{elements}</>;
+}
+
 
 function App() {
   const [selectedColorInd, setSelectedColorInd] = useState(null);
@@ -45,7 +78,7 @@ function App() {
             </div>
           </div>
 
-          <div className="colors-256"></div>
+          <div className="colors-256"><Squares256 /></div>
         </div>
       </section>
 
