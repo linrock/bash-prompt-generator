@@ -12,29 +12,24 @@
       <header>
         <div class="container">
           <h1>Bash prompt generator</h1>
-          <p>Click on the color boxes to customize your bash prompt text colors</p>
+          <p>Click on the color boxes to customize your bash prompt colors</p>
         </div>
       </header>
 
       <div id="root"></div>
     </main>
 
-    <div class="container">
-      <code class="prompt-ps1" style="display: none">
-        PS1="\[$(tput setaf 226)\]\u\[$(tput setaf 220)\]@\[$(tput setaf 214)\]\h
-          \[$(tput setaf 33)\]\w \[$(tput sgr0)\]$ "
-      </code>
+    <section class="bash-prompt-variables">
+      <div class="container">
+        <code class="prompt-ps1" style="display: none">
+          PS1="\[$(tput setaf 226)\]\u\[$(tput setaf 220)\]@\[$(tput setaf 214)\]\h
+            \[$(tput setaf 33)\]\w \[$(tput sgr0)\]$ "
+        </code>
 
-      <section className="bash-prompt">
-        <div className="container">
-          <h2>Bash prompt PS1</h2>
-          <p>Put one of the above in ~/.bashrc or ~/.bash_profile to customize your prompt.</p>
-        </div>
-      </section>
-
-      <section>
         <h2>Bash prompt variables</h2>
-        <p>These are the variable substitutions used above.</p>
+        <p>
+          These are the variable substitutions used above.
+        </p>
         <pre className="legend">
 \u     root
 \h     host
@@ -85,12 +80,12 @@
        into the prompt
 \]     end a sequence of non-printing characters
 </pre>
-      </section>
-    </div>
+      </div>
+    </section>
 
     <footer>
-      <div class="container">
-        <section>
+      <section>
+        <div class="container">
           <h2>About</h2>
           <p>
             This page is a work in progress. It's intended to help you create color schemes
@@ -104,9 +99,11 @@
               https://github.com/linrock/bash-prompt-generator
             </a>
           </p>
-        </section>
+        </div>
+      </section>
 
-        <section>
+      <section style="background: #0e0e0e">
+        <div class="container">
           <h2>Resources</h2>
           <ul>
             <li>
@@ -116,8 +113,8 @@
               <a href="https://robotmoon.com/256-colors/">xterm 256 colors</a>
             </li>
           </ul>
-        </section>
-      </div>
+        </div>
+      </section>
     </footer>
   </body>
 </html>

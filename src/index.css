@@ -18,7 +18,6 @@ header {
 }
 footer {
   background: #151515;
-  padding: 2rem 0;
 }
 h1, h2 {
   display: block;
@@ -28,7 +27,7 @@ h1, h2 {
 }
 h2 {
   opacity: 0.6;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
 }
 pre {
   background: #111;
@@ -61,6 +60,7 @@ li {
 p {
   font-size: 1rem;
   line-height: 1.5rem;
+  margin-top: 0;
 }
 a {
   color: inherit;
@@ -77,8 +77,11 @@ section {
   padding: 2rem 0 4rem;
 }
 section.bash-prompt-preview {
-  background: #242424;
+  background: #181818;
   padding-bottom: 2rem;
+}
+section.bash-prompt-variables {
+  background: #1e1e1e;
 }
 main {
   background: #1c1c1c;

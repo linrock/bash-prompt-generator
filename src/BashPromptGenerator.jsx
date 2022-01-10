@@ -74,6 +74,22 @@ function BashPromptGenerator() {
 
   return (
     <>
+      <section className="bash-prompt-preview">
+        <div className="container">
+          <h2>Bash prompt preview</h2>
+          <code className="prompt-preview">
+            <span style={{ color: COLORS[colors[0]] }} >root</span><span style={{ color: COLORS[colors[1]] }}
+            >@</span><span style={{ color: COLORS[colors[2]] }}
+            >host</span>
+            &nbsp;
+            <span style={{ color: COLORS[colors[3]] }}>~/path/to/dir</span>
+            &nbsp;
+            <span className="cmd-separator"
+            >$</span>
+          </code>
+        </div>
+      </section>
+
       <div className="container">
         <section>
           <h2>Customize colors</h2>
@@ -105,18 +121,8 @@ function BashPromptGenerator() {
 
       <section className="bash-prompt-preview">
         <div className="container">
-          <h2>Bash prompt preview</h2>
-          <code className="prompt-preview">
-            <span style={{ color: COLORS[colors[0]] }} >root</span><span style={{ color: COLORS[colors[1]] }}
-            >@</span><span style={{ color: COLORS[colors[2]] }}
-            >host</span>
-            &nbsp;
-            <span style={{ color: COLORS[colors[3]] }}>~/path/to/dir</span>
-            &nbsp;
-            <span className="cmd-separator"
-            >$</span>
-          </code>
-          <p>To use the prompt, choose between tput and ANSI escape sequences for PS1:</p>
+          <h2>Bash prompt PS1</h2>
+          <p>To use the prompt colors, choose between tput and ANSI escape sequences:</p>
           <code className="prompt-ps1">
             export PS1="\[$(tput setaf {colors[0]})\]\u\[$(tput setaf {colors[1]})\]@\[$(tput setaf {colors[2]})\]\h
               \[$(tput setaf {colors[3]})\]\w \[$(tput sgr0)\]$ "
@@ -125,6 +131,7 @@ function BashPromptGenerator() {
             export PS1="\[\e[38;5;{colors[0]}m\]\u\[\e[38;5;{colors[1]}m\]@\[\e[38;5;{colors[2]}m\]\h
               \[\e[38;5;{colors[3]}m\]\w \[\033[0m\]$ "
           </code>
+          <p>Put one of the above in ~/.bashrc or ~/.bash_profile to customize your prompt.</p>
         </div>
       </section>
     </>
