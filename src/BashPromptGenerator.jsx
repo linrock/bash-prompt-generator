@@ -122,8 +122,7 @@ function BashPromptGenerator() {
       <section className="bash-prompt-preview">
         <div className="container">
           <h2>Bash prompt PS1</h2>
-          <p>To use the chosen colors, copy one of these into ~/.bashrc or ~/.bash_profile</p>
-
+          <p>To try the colors you chose, set the PS1 environment variable in your shell:</p>
           <code className="prompt-ps1">
             export PS1="\[$(tput setaf {colors[0]})\]\u\[$(tput setaf {colors[1]})\]@\[$(tput setaf {colors[2]})\]\h
               \[$(tput setaf {colors[3]})\]\w \[$(tput sgr0)\]$ "
@@ -132,7 +131,11 @@ function BashPromptGenerator() {
             export PS1="\[\e[38;5;{colors[0]}m\]\u\[\e[38;5;{colors[1]}m\]@\[\e[38;5;{colors[2]}m\]\h
               \[\e[38;5;{colors[3]}m\]\w \[\033[0m\]$ "
           </code>
-          <p>It's up to you to decide between tput and ANSI escape sequences.</p>
+          <p>
+            It's up to you to decide between tput and ANSI escape sequences.
+            To persist your customized prompt, put one of the above into
+            ~/.bashrc or ~/.bash_profile
+          </p>
         </div>
       </section>
     </>
