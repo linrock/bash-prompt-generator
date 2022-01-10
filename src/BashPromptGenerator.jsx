@@ -13,7 +13,7 @@ function sixSquares() {
   return squares
 }
 
-export default function() {
+function BashPromptGenerator() {
   const [selectedColorInd, setSelectedColorInd] = useState(0);
   const [colors, setColors] = useState([226, 220, 214, 33]);
 
@@ -143,3 +143,5 @@ export default function() {
     </>
   );
 }
+
+export default BashPromptGenerator;
