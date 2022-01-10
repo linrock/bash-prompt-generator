@@ -15,38 +15,35 @@ function sixSquares() {
 
 export default function() {
   const [selectedColorInd, setSelectedColorInd] = useState(0);
-  const [color0, setColor0] = useState(226);
-  const [color1, setColor1] = useState(220);
-  const [color2, setColor2] = useState(214);
-  const [color3, setColor3] = useState(33);
+  const [colors, setColors] = useState([226, 220, 214, 33]);
+
+  function setColorCodeAt(index, code) {
+    const colorsCopy = colors.slice();
+    colorsCopy[index] = code;
+    setColors(colorsCopy);
+  }
 
   // color squares that can be clicked to set the color
   const Square = ({ code }) => (
     <div className="square"
       style={{ background: COLORS[code] }}
       onMouseDown={() => {
-        if (selectedColorInd === null) {
-          return;
+        if (selectedColorInd !== null) {
+          setColorCodeAt(selectedColorInd, code);
         }
-        if (selectedColorInd === 0) setColor0(code);
-        if (selectedColorInd === 1) setColor1(code);
-        if (selectedColorInd === 2) setColor2(code);
-        if (selectedColorInd === 3) setColor3(code);
       }}
       onMouseOver={(event) => {
-        if (event.buttons !== 1) {
-          return;
+        // if the left mouse button is held down while hovering over the color squares
+        if (event.buttons === 1) {
+          setColorCodeAt(selectedColorInd, code);
         }
-        if (selectedColorInd === 0) setColor0(code);
-        if (selectedColorInd === 1) setColor1(code);
-        if (selectedColorInd === 2) setColor2(code);
-        if (selectedColorInd === 3) setColor3(code);
       }}></div>
   );
 
   // build html for the 256 color squares
   const Squares256 = () => {
     let elements = [];
+
     // 2 rows of 8 for the first 16 basic colors
     for (let j = 0; j < 2; j++) {
       for (let i = 0; i < 8; i++) {
@@ -55,13 +52,15 @@ export default function() {
       }
       elements.push(<div className="clear-left" key={`clear-${j}`}></div>);
     }
+
     // 6x squares of 6x6 colors each
-    elements = elements.concat(sixSquares().map((sixBySix) => {
-      const elements = [];
-      sixBySix.forEach((code) => elements.push(<Square code={code} key={code} />));
-      return (<div className="six-by-six">{elements}</div>);
+    elements = elements.concat(sixSquares().map((sixBySix, i) => {
+      const squares = [];
+      sixBySix.forEach((code) => squares.push(<Square code={code} key={code} />));
+      return (<div className="six-by-six" key={`six-by-six-${i}`}>{squares}</div>);
     }));
     elements.push(<div className="clear-left" key={`clear-6x6`}></div>);
+
     // 2 rows of 12 for the last 24 grayscale colors
     for (let j = 0; j < 2; j++) {
       for (let i = 0; i < 12; i++) {
@@ -80,73 +79,26 @@ export default function() {
           <h2>Customize colors</h2>
           <div className="color-wrapper">
             <div className="color-theme">
-              <div className="color-choice">
-                {selectedColorInd === 0 && <div className="selection-indicator">*</div>}
-                <div className="color-preview"
-                     style={{ background: COLORS[color0] }}
-                     onClick={() => {
-                       setSelectedColorInd(0);
-                     }}></div>
-                <input type="number" min="0" max="255"
-                       onMouseDown={() => setSelectedColorInd(0)}
-                       value={color0} onChange={(event) => {
-                         const code = event.target.value;
-                         if (code >= 0 && code <= 255) {
-                           setColor0(code);
-                         }
-                       }} />
-              </div>
-              <div className="color-choice">
-                {selectedColorInd === 1 && <div className="selection-indicator">*</div>}
-                <div className="color-preview"
-                     style={{ background: COLORS[color1] }}
-                     onClick={() => {
-                       setSelectedColorInd(1);
-                     }}></div>
-                <input type="number" min="0" max="255"
-                       onMouseDown={() => setSelectedColorInd(1)}
-                       value={color1} onChange={(event) => {
-                         const code = event.target.value;
-                         if (code >= 0 && code <= 255) {
-                           setColor1(code);
-                         }
-                       }} />
-              </div>
-              <div className="color-choice">
-                {selectedColorInd === 2 && <div className="selection-indicator">*</div>}
-                <div className="color-preview"
-                     style={{ background: COLORS[color2] }}
-                     onClick={() => {
-                       setSelectedColorInd(2);
-                     }}></div>
-                <input type="number" min="0" max="255"
-                       onMouseDown={() => setSelectedColorInd(2)}
-                       value={color2} onChange={(event) => {
-                         const code = event.target.value;
-                         if (code >= 0 && code <= 255) {
-                           setColor2(code);
-                         }
-                       }} />
-              </div>
-              <div className="color-choice">
-                {selectedColorInd === 3 && <div className="selection-indicator">*</div>}
-                <div className="color-preview"
-                     style={{ background: COLORS[color3] }}
-                     onClick={() => {
-                       setSelectedColorInd(3);
-                     }}></div>
-                <input type="number" min="0" max="255"
-                       onMouseDown={() => setSelectedColorInd(3)}
-                       value={color3} onChange={(event) => {
-                         const code = event.target.value;
-                         if (code >= 0 && code <= 255) {
-                           setColor3(code);
-                         }
-                       }} />
-              </div>
+              {[0, 1, 2, 3].map((ind) => (
+                <div className="color-choice" key={`color-choice-${ind}`}>
+                  {selectedColorInd === ind && <div className="selection-indicator">*</div>}
+                  <div className="color-preview"
+                       style={{ background: COLORS[colors[ind]] }}
+                       onMouseDown={() => setSelectedColorInd(ind)}></div>
+                  <input type="number" min="0" max="255"
+                         onMouseDown={() => setSelectedColorInd(ind)}
+                         value={colors[ind]} onChange={(event) => {
+                           const code = event.target.value;
+                           if (code >= 0 && code <= 255) {
+                             setColorCodeAt(ind, code);
+                           }
+                         }} />
+                </div>
+              ))}
             </div>
-
-            <div className="colors-256"><Squares256 /></div>
+            <div className="colors-256">
+              <Squares256 />
+            </div>
           </div>
         </section>
       </div>
@@ -155,23 +107,23 @@ export default function() {
         <div className="container">
           <h2>Bash prompt preview</h2>
           <code className="prompt-preview">
-            <span style={{ color: COLORS[color0] }} >root</span><span style={{ color: COLORS[color1] }}
-            >@</span><span style={{ color: COLORS[color2] }}
+            <span style={{ color: COLORS[colors[0]] }} >root</span><span style={{ color: COLORS[colors[1]] }}
+            >@</span><span style={{ color: COLORS[colors[2]] }}
             >host</span>
             &nbsp;
-            <span style={{ color: COLORS[color3] }}>~/path/to/dir</span>
+            <span style={{ color: COLORS[colors[3]] }}>~/path/to/dir</span>
             &nbsp;
             <span className="cmd-separator"
             >$</span>
           </code>
           <p>To use the prompt, choose between tput and ANSI escape sequences for PS1:</p>
           <code className="prompt-ps1">
-            export PS1="\[$(tput setaf {color0})\]\u\[$(tput setaf {color1})\]@\[$(tput setaf {color2})\]\h
-              \[$(tput setaf {color3})\]\w \[$(tput sgr0)\]$ "
+            export PS1="\[$(tput setaf {colors[0]})\]\u\[$(tput setaf {colors[1]})\]@\[$(tput setaf {colors[2]})\]\h
+              \[$(tput setaf {colors[3]})\]\w \[$(tput sgr0)\]$ "
           </code>
           <code className="prompt-ps1-ansi">
-            export PS1="\[\e[38;5;{color0}m\]\u\[\e[38;5;{color1}m\]@\[\e[38;5;{color2}m\]\h
-              \[\e[38;5;{color3}m\]\w \[\033[0m\]$ "
+            export PS1="\[\e[38;5;{colors[0]}m\]\u\[\e[38;5;{colors[1]}m\]@\[\e[38;5;{colors[2]}m\]\h
+              \[\e[38;5;{colors[3]}m\]\w \[\033[0m\]$ "
           </code>
         </div>
       </section>
