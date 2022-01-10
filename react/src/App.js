@@ -60,12 +60,11 @@ export default function() {
       <section>
         <h2>Bash prompt preview</h2>
         <code className="prompt-preview">
-          <span className="username"
-          >root</span><span className="separator"
-          >@</span><span className="hostname"
+          <span style={{ color: COLORS[color0] }}
+          >root</span><span style={{ color: COLORS[color1] }}
+          >@</span><span style={{ color: COLORS[color2] }}
           >host</span>
-          <span className="relative-dir"
-          >~/path/to/dir</span>
+          <span style={{ color: COLORS[color3] }}>~/path/to/dir</span>
           <span className="cmd-separator"
           >$</span>
         </code>
@@ -82,7 +81,8 @@ export default function() {
                      console.log('set selected color index 0');
                      setSelectedColorInd(0);
                    }}></div>
-              <input type="number" min="0" max="255" id="color0" defaultValue={color0} />
+              <input type="number" min="0" max="255"
+                     value={color0} />
             </div>
             <div className="color-choice">
               <div className="color-preview"
@@ -91,7 +91,8 @@ export default function() {
                      console.log('set selected color index 1');
                      setSelectedColorInd(1);
                    }}></div>
-              <input type="number" min="0" max="255" id="color1" defaultValue={color1} />
+              <input type="number" min="0" max="255"
+                     value={color1} />
             </div>
             <div className="color-choice">
               <div className="color-preview"
@@ -100,7 +101,8 @@ export default function() {
                      console.log('set selected color index 2');
                      setSelectedColorInd(2);
                    }}></div>
-              <input type="number" min="0" max="255" id="color2" defaultValue={color2} />
+              <input type="number" min="0" max="255"
+                     value={color2} />
             </div>
             <div className="color-choice">
               <div className="color-preview"
@@ -109,7 +111,8 @@ export default function() {
                      console.log('set selected color index 3');
                      setSelectedColorInd(3);
                    }}></div>
-              <input type="number" min="0" max="255" id="color3" defaultValue={color3} />
+              <input type="number" min="0" max="255"
+                     value={color3} />
             </div>
           </div>
 
@@ -120,8 +123,8 @@ export default function() {
       <section>
         <h2>Bash prompt PS1</h2>
         <code className="prompt-ps1">
-          PS1="\[$(tput setaf <span className="ps1-username-color">226</span>)\]\u\[$(tput setaf <span className="ps1-at-color">220</span>)\]@\[$(tput setaf <span className="ps1-hostname-color">214</span>)\]\h
-            \[$(tput setaf <span className="ps1-relative-dir-color">33</span>)\]\w \[$(tput sgr0)\]$ "
+          PS1="\[$(tput setaf {color0})\]\u\[$(tput setaf {color1})\]@\[$(tput setaf {color2})\]\h
+            \[$(tput setaf <span>{color3}</span>)\]\w \[$(tput sgr0)\]$ "
         </code>
       </section>
     </>
