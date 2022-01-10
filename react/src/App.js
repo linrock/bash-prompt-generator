@@ -92,7 +92,12 @@ export default function() {
                      setSelectedColorInd(0);
                    }}></div>
               <input type="number" min="0" max="255"
-                     value={color0} onChange={(event) => setColor0(event.target.value)}/>
+                     value={color0} onChange={(event) => {
+                       const code = event.target.value;
+                       if (code >= 0 && code <= 255) {
+                         setColor0(code);
+                       }
+                     }} />
             </div>
             <div className="color-choice">
               {selectedColorInd === 1 && <div className="selection-indicator">*</div>}
@@ -103,7 +108,12 @@ export default function() {
                      setSelectedColorInd(1);
                    }}></div>
               <input type="number" min="0" max="255"
-                     value={color1} onChange={(event) => setColor1(event.target.value)}/>
+                     value={color1} onChange={(event) => {
+                       const code = event.target.value;
+                       if (code >= 0 && code <= 255) {
+                         setColor1(code);
+                       }
+                     }} />
             </div>
             <div className="color-choice">
               {selectedColorInd === 2 && <div className="selection-indicator">*</div>}
@@ -114,7 +124,12 @@ export default function() {
                      setSelectedColorInd(2);
                    }}></div>
               <input type="number" min="0" max="255"
-                     value={color2} onChange={(event) => setColor2(event.target.value)}/>
+                     value={color2} onChange={(event) => {
+                       const code = event.target.value;
+                       if (code >= 0 && code <= 255) {
+                         setColor2(code);
+                       }
+                     }} />
             </div>
             <div className="color-choice">
               {selectedColorInd === 3 && <div className="selection-indicator">*</div>}
@@ -125,7 +140,12 @@ export default function() {
                      setSelectedColorInd(3);
                    }}></div>
               <input type="number" min="0" max="255"
-                     value={color3} onChange={(event) => setColor3(event.target.value)}/>
+                     value={color3} onChange={(event) => {
+                       const code = event.target.value;
+                       if (code >= 0 && code <= 255) {
+                         setColor3(code);
+                       }
+                     }} />
             </div>
           </div>
 
