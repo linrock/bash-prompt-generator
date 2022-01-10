@@ -25,8 +25,11 @@ h2 {
   padding-bottom: 2rem;
 }
 pre {
+  background: #111;
+  padding: 2rem;
   font-size: 1rem;
   line-height: 1.5rem;
+  border-radius: 3px;
 }
 input[type="number"] {
   color: white;
@@ -44,6 +47,7 @@ input::-webkit-inner-spin-button {
 }
 p {
   font-size: 1rem;
+  line-height: 1.5rem;
 }
 a {
   color: inherit;
@@ -54,6 +58,7 @@ code {
   display: block;
   border-radius: 3px;
   font-size: 1rem;
+  margin-bottom: 1rem;
 }
 section {
   margin: 2rem 0 4rem;
@@ -109,7 +114,6 @@ main {
 }
 .legend {
   font-family: monospace;
-  margin-top: 3rem;
   line-height: 1.2rem;
   padding: 2rem;
 }

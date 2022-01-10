@@ -76,20 +76,6 @@ export default function() {
   return (
     <>
       <section>
-        <h2>Bash prompt preview</h2>
-        <code className="prompt-preview">
-          <span style={{ color: COLORS[color0] }} >root</span><span style={{ color: COLORS[color1] }}
-          >@</span><span style={{ color: COLORS[color2] }}
-          >host</span>
-          &nbsp;
-          <span style={{ color: COLORS[color3] }}>~/path/to/dir</span>
-          &nbsp;
-          <span className="cmd-separator"
-          >$</span>
-        </code>
-      </section>
-
-      <section>
         <h2>Customize colors</h2>
         <div className="color-wrapper">
           <div className="color-theme">
@@ -164,18 +150,32 @@ export default function() {
       </section>
 
       <section>
-        <h2>Bash prompt PS1</h2>
-        <p>Put this in ~/.bashrc or ~/.bash_profile to customize your prompt</p>
+        <h2>Bash prompt preview</h2>
+        <code className="prompt-preview">
+          <span style={{ color: COLORS[color0] }} >root</span><span style={{ color: COLORS[color1] }}
+          >@</span><span style={{ color: COLORS[color2] }}
+          >host</span>
+          &nbsp;
+          <span style={{ color: COLORS[color3] }}>~/path/to/dir</span>
+          &nbsp;
+          <span className="cmd-separator"
+          >$</span>
+        </code>
         <code className="prompt-ps1">
           export PS1="\[$(tput setaf {color0})\]\u\[$(tput setaf {color1})\]@\[$(tput setaf {color2})\]\h
             \[$(tput setaf <span>{color3}</span>)\]\w \[$(tput sgr0)\]$ "
         </code>
+      </section>
 
+      <section>
+        <h2>Bash prompt PS1</h2>
+        <p>Put the above in ~/.bashrc or ~/.bash_profile to customize your prompt</p>
+        <p>These are the variable substitutions used in PS1.</p>
         <pre className="legend">{`
 \\u    username       root
 \\h    hostname       host
 \\w    relative dir   ~/path/to/dir
-        `}</pre>
+        `.trim()}</pre>
       </section>
     </>
   );
