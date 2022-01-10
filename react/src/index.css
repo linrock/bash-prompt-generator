@@ -96,6 +96,9 @@ main {
   aspect-ratio: 1;
   float: left;
 }
+.square:hover {
+  cursor: pointer;
+}
 .clear-left {
   clear: left;
 }
