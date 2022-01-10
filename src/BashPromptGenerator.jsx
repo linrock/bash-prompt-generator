@@ -78,11 +78,11 @@ function BashPromptGenerator() {
         <div className="container">
           <h2>Bash prompt preview</h2>
           <code className="prompt-preview">
-            <span style={{ color: COLORS[colors[0]] }} >root</span><span style={{ color: COLORS[colors[1]] }}
+            <span style={{ color: COLORS[colors[0]] }} >user</span><span style={{ color: COLORS[colors[1]] }}
             >@</span><span style={{ color: COLORS[colors[2]] }}
-            >host</span>
+            >hostname</span>
             &nbsp;
-            <span style={{ color: COLORS[colors[3]] }}>~/path/to/dir</span>
+            <span style={{ color: COLORS[colors[3]] }}>~/path/to/directory</span>
             &nbsp;
             <span className="cmd-separator"
             >$</span>
