@@ -75,6 +75,7 @@ export default function() {
         <div className="color-wrapper">
           <div className="color-theme">
             <div className="color-choice">
+              {selectedColorInd === 0 && <div className="selection-indicator">*</div>}
               <div className="color-preview"
                    style={{ background: COLORS[color0] }}
                    onClick={() => {
@@ -85,6 +86,7 @@ export default function() {
                      value={color0} />
             </div>
             <div className="color-choice">
+              {selectedColorInd === 1 && <div className="selection-indicator">*</div>}
               <div className="color-preview"
                    style={{ background: COLORS[color1] }}
                    onClick={() => {
@@ -95,6 +97,7 @@ export default function() {
                      value={color1} />
             </div>
             <div className="color-choice">
+              {selectedColorInd === 2 && <div className="selection-indicator">*</div>}
               <div className="color-preview"
                    style={{ background: COLORS[color2] }}
                    onClick={() => {
@@ -105,6 +108,7 @@ export default function() {
                      value={color2} />
             </div>
             <div className="color-choice">
+              {selectedColorInd === 3 && <div className="selection-indicator">*</div>}
               <div className="color-preview"
                    style={{ background: COLORS[color3] }}
                    onClick={() => {

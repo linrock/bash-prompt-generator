@@ -30,17 +30,21 @@ section {
   margin: 3rem 0 4rem;
 }
 main {
-  height: 100vh;
+  min-height: 100vh;
   background: #1c1c1c;
 }
 .container {
   width: 500px;
   margin: 0 auto;
+  position: relative;
 }
 .color-wrapper {
   display: flex;
 }
-.colors-256 {
+.selection-indicator {
+  position: absolute;
+  left: -1rem;
+  line-height: 2rem;
 }
 .square {
   width: 1.5rem;
