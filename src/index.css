@@ -5,7 +5,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   background: #222;
   color: #f5f5f5;
   margin: 0;
