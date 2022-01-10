@@ -5,13 +5,28 @@ body {
   padding: 0;
   color: white;
 }
+header {
+  background: #121212;
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+}
+footer {
+  background: #151515;
+  padding: 2rem 0;
+}
 h1, h2 {
   display: block;
   font-size: 1rem;
-  padding: 1rem 0 2rem;
+  margin: 0;
+  padding: 0;
 }
 h2 {
   opacity: 0.6;
+  padding-bottom: 2rem;
+}
+pre {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 input[type="number"] {
   color: white;
@@ -27,14 +42,21 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
+p {
+  font-size: 1rem;
+}
+a {
+  color: inherit;
+  opacity: 0.8;
+  font-size: 1rem;
+}
 code {
   display: block;
   border-radius: 3px;
   font-size: 1rem;
 }
 section {
-  margin: 3rem 0 4rem;
+  margin: 2rem 0 4rem;
 }
 main {
   min-height: 100vh;
@@ -84,12 +106,10 @@ main {
 .prompt-ps1 {
   background: #111;
   padding: 2rem;
-  margin-top: 2rem;
 }
 .legend {
   font-family: monospace;
   margin-top: 3rem;
-  font-size: 1rem;
   line-height: 1.2rem;
   padding: 2rem;
 }

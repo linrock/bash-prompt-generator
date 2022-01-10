@@ -14,7 +14,7 @@ function sixSquares() {
 }
 
 export default function() {
-  const [selectedColorInd, setSelectedColorInd] = useState(null);
+  const [selectedColorInd, setSelectedColorInd] = useState(0);
   const [color0, setColor0] = useState(226);
   const [color1, setColor1] = useState(220);
   const [color2, setColor2] = useState(214);
@@ -165,8 +165,9 @@ export default function() {
 
       <section>
         <h2>Bash prompt PS1</h2>
+        <p>Put this in ~/.bashrc or ~/.bash_profile to customize your prompt</p>
         <code className="prompt-ps1">
-          PS1="\[$(tput setaf {color0})\]\u\[$(tput setaf {color1})\]@\[$(tput setaf {color2})\]\h
+          export PS1="\[$(tput setaf {color0})\]\u\[$(tput setaf {color1})\]@\[$(tput setaf {color2})\]\h
             \[$(tput setaf <span>{color3}</span>)\]\w \[$(tput sgr0)\]$ "
         </code>
 
