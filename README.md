@@ -4,6 +4,8 @@ This is a web app for helping you customize the colors in your bash prompt.
 
 See: https://robotmoon.com/bash-prompt-generator
 
+![image](https://user-images.githubusercontent.com/208617/148721682-1b03033e-8276-4a59-9b1f-ba952a24ae1b.png)
+
 
 ## Development
 
