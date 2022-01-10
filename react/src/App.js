@@ -22,6 +22,15 @@ export default function() {
         if (selectedColorInd === 1) setColor1(code);
         if (selectedColorInd === 2) setColor2(code);
         if (selectedColorInd === 3) setColor3(code);
+      }}
+      onMouseOver={(event) => {
+        if (event.buttons !== 1) {
+          return;
+        }
+        if (selectedColorInd === 0) setColor0(code);
+        if (selectedColorInd === 1) setColor1(code);
+        if (selectedColorInd === 2) setColor2(code);
+        if (selectedColorInd === 3) setColor3(code);
       }}></div>
   );
 
