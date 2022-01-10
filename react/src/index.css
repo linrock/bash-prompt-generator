@@ -69,6 +69,9 @@ main {
   width: 3rem;
   aspect-ratio: 1;
 }
+.color-preview:hover {
+  cursor: pointer;
+}
 .prompt-preview {
   background: #111;
   padding: 2rem;
