@@ -75,107 +75,113 @@ export default function() {
 
   return (
     <>
-      <section>
-        <h2>Customize colors</h2>
-        <div className="color-wrapper">
-          <div className="color-theme">
-            <div className="color-choice">
-              {selectedColorInd === 0 && <div className="selection-indicator">*</div>}
-              <div className="color-preview"
-                   style={{ background: COLORS[color0] }}
-                   onClick={() => {
-                     setSelectedColorInd(0);
-                   }}></div>
-              <input type="number" min="0" max="255"
-                     onMouseDown={() => setSelectedColorInd(0)}
-                     value={color0} onChange={(event) => {
-                       const code = event.target.value;
-                       if (code >= 0 && code <= 255) {
-                         setColor0(code);
-                       }
-                     }} />
+      <div className="container">
+        <section>
+          <h2>Customize colors</h2>
+          <div className="color-wrapper">
+            <div className="color-theme">
+              <div className="color-choice">
+                {selectedColorInd === 0 && <div className="selection-indicator">*</div>}
+                <div className="color-preview"
+                     style={{ background: COLORS[color0] }}
+                     onClick={() => {
+                       setSelectedColorInd(0);
+                     }}></div>
+                <input type="number" min="0" max="255"
+                       onMouseDown={() => setSelectedColorInd(0)}
+                       value={color0} onChange={(event) => {
+                         const code = event.target.value;
+                         if (code >= 0 && code <= 255) {
+                           setColor0(code);
+                         }
+                       }} />
+              </div>
+              <div className="color-choice">
+                {selectedColorInd === 1 && <div className="selection-indicator">*</div>}
+                <div className="color-preview"
+                     style={{ background: COLORS[color1] }}
+                     onClick={() => {
+                       setSelectedColorInd(1);
+                     }}></div>
+                <input type="number" min="0" max="255"
+                       onMouseDown={() => setSelectedColorInd(1)}
+                       value={color1} onChange={(event) => {
+                         const code = event.target.value;
+                         if (code >= 0 && code <= 255) {
+                           setColor1(code);
+                         }
+                       }} />
+              </div>
+              <div className="color-choice">
+                {selectedColorInd === 2 && <div className="selection-indicator">*</div>}
+                <div className="color-preview"
+                     style={{ background: COLORS[color2] }}
+                     onClick={() => {
+                       setSelectedColorInd(2);
+                     }}></div>
+                <input type="number" min="0" max="255"
+                       onMouseDown={() => setSelectedColorInd(2)}
+                       value={color2} onChange={(event) => {
+                         const code = event.target.value;
+                         if (code >= 0 && code <= 255) {
+                           setColor2(code);
+                         }
+                       }} />
+              </div>
+              <div className="color-choice">
+                {selectedColorInd === 3 && <div className="selection-indicator">*</div>}
+                <div className="color-preview"
+                     style={{ background: COLORS[color3] }}
+                     onClick={() => {
+                       setSelectedColorInd(3);
+                     }}></div>
+                <input type="number" min="0" max="255"
+                       onMouseDown={() => setSelectedColorInd(3)}
+                       value={color3} onChange={(event) => {
+                         const code = event.target.value;
+                         if (code >= 0 && code <= 255) {
+                           setColor3(code);
+                         }
+                       }} />
+              </div>
             </div>
-            <div className="color-choice">
-              {selectedColorInd === 1 && <div className="selection-indicator">*</div>}
-              <div className="color-preview"
-                   style={{ background: COLORS[color1] }}
-                   onClick={() => {
-                     setSelectedColorInd(1);
-                   }}></div>
-              <input type="number" min="0" max="255"
-                     onMouseDown={() => setSelectedColorInd(1)}
-                     value={color1} onChange={(event) => {
-                       const code = event.target.value;
-                       if (code >= 0 && code <= 255) {
-                         setColor1(code);
-                       }
-                     }} />
-            </div>
-            <div className="color-choice">
-              {selectedColorInd === 2 && <div className="selection-indicator">*</div>}
-              <div className="color-preview"
-                   style={{ background: COLORS[color2] }}
-                   onClick={() => {
-                     setSelectedColorInd(2);
-                   }}></div>
-              <input type="number" min="0" max="255"
-                     onMouseDown={() => setSelectedColorInd(2)}
-                     value={color2} onChange={(event) => {
-                       const code = event.target.value;
-                       if (code >= 0 && code <= 255) {
-                         setColor2(code);
-                       }
-                     }} />
-            </div>
-            <div className="color-choice">
-              {selectedColorInd === 3 && <div className="selection-indicator">*</div>}
-              <div className="color-preview"
-                   style={{ background: COLORS[color3] }}
-                   onClick={() => {
-                     setSelectedColorInd(3);
-                   }}></div>
-              <input type="number" min="0" max="255"
-                     onMouseDown={() => setSelectedColorInd(3)}
-                     value={color3} onChange={(event) => {
-                       const code = event.target.value;
-                       if (code >= 0 && code <= 255) {
-                         setColor3(code);
-                       }
-                     }} />
-            </div>
-          </div>
 
-          <div className="colors-256"><Squares256 /></div>
+            <div className="colors-256"><Squares256 /></div>
+          </div>
+        </section>
+      </div>
+
+      <section className="bash-prompt-preview">
+        <div className="container">
+          <h2>Bash prompt preview</h2>
+          <code className="prompt-preview">
+            <span style={{ color: COLORS[color0] }} >root</span><span style={{ color: COLORS[color1] }}
+            >@</span><span style={{ color: COLORS[color2] }}
+            >host</span>
+            &nbsp;
+            <span style={{ color: COLORS[color3] }}>~/path/to/dir</span>
+            &nbsp;
+            <span className="cmd-separator"
+            >$</span>
+          </code>
+          <code className="prompt-ps1">
+            export PS1="\[$(tput setaf {color0})\]\u\[$(tput setaf {color1})\]@\[$(tput setaf {color2})\]\h
+              \[$(tput setaf <span>{color3}</span>)\]\w \[$(tput sgr0)\]$ "
+          </code>
         </div>
       </section>
 
       <section>
-        <h2>Bash prompt preview</h2>
-        <code className="prompt-preview">
-          <span style={{ color: COLORS[color0] }} >root</span><span style={{ color: COLORS[color1] }}
-          >@</span><span style={{ color: COLORS[color2] }}
-          >host</span>
-          &nbsp;
-          <span style={{ color: COLORS[color3] }}>~/path/to/dir</span>
-          &nbsp;
-          <span className="cmd-separator"
-          >$</span>
-        </code>
-        <code className="prompt-ps1">
-          export PS1="\[$(tput setaf {color0})\]\u\[$(tput setaf {color1})\]@\[$(tput setaf {color2})\]\h
-            \[$(tput setaf <span>{color3}</span>)\]\w \[$(tput sgr0)\]$ "
-        </code>
-      </section>
-
-      <section>
-        <h2>Bash prompt PS1</h2>
-        <p>Put the above in ~/.bashrc or ~/.bash_profile to customize your prompt</p>
-        <p>These are the variable substitutions used in PS1.</p>
-        <pre className="legend">{`
+        <div className="container">
+          <h2>Bash prompt PS1</h2>
+          <p>Put the above in ~/.bashrc or ~/.bash_profile to customize your bash prompt.</p>
+          <p>These are the variable substitutions used above.</p>
+          <pre className="legend">{`
 \\u    username       root
 \\h    hostname       host
 \\w    relative dir   ~/path/to/dir
-        `.trim()}</pre>
+          `.trim()}</pre>
+        </div>
       </section>
     </>
   );
