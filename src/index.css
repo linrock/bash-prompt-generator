@@ -25,6 +25,9 @@ h1, h2 {
   margin: 0;
   padding: 0;
 }
+h1 {
+  color: #97ff96;
+}
 h2 {
   opacity: 0.6;
   padding-bottom: 1.5rem;
