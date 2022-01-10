@@ -89,6 +89,7 @@ export default function() {
                      setSelectedColorInd(0);
                    }}></div>
               <input type="number" min="0" max="255"
+                     onMouseDown={() => setSelectedColorInd(0)}
                      value={color0} onChange={(event) => {
                        const code = event.target.value;
                        if (code >= 0 && code <= 255) {
@@ -104,6 +105,7 @@ export default function() {
                      setSelectedColorInd(1);
                    }}></div>
               <input type="number" min="0" max="255"
+                     onMouseDown={() => setSelectedColorInd(1)}
                      value={color1} onChange={(event) => {
                        const code = event.target.value;
                        if (code >= 0 && code <= 255) {
@@ -119,6 +121,7 @@ export default function() {
                      setSelectedColorInd(2);
                    }}></div>
               <input type="number" min="0" max="255"
+                     onMouseDown={() => setSelectedColorInd(2)}
                      value={color2} onChange={(event) => {
                        const code = event.target.value;
                        if (code >= 0 && code <= 255) {
@@ -134,6 +137,7 @@ export default function() {
                      setSelectedColorInd(3);
                    }}></div>
               <input type="number" min="0" max="255"
+                     onMouseDown={() => setSelectedColorInd(3)}
                      value={color3} onChange={(event) => {
                        const code = event.target.value;
                        if (code >= 0 && code <= 255) {

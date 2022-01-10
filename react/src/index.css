@@ -20,7 +20,14 @@ input[type="number"] {
   font-size: 1rem;
   font-family: monospace;
   padding: 0.5rem 1rem;
+   -moz-appearance: textfield;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 code {
   display: block;
   border-radius: 3px;
@@ -34,7 +41,7 @@ main {
   background: #1c1c1c;
 }
 .container {
-  width: 500px;
+  width: 800px;
   margin: 0 auto;
   position: relative;
 }
@@ -47,7 +54,7 @@ main {
   line-height: 2rem;
 }
 .square {
-  width: 1.5rem;
+  width: 2rem;
   aspect-ratio: 1;
   float: left;
 }
@@ -59,7 +66,7 @@ main {
   margin-right: 3rem;
 }
 .color-preview {
-  width: 2rem;
+  width: 3rem;
   aspect-ratio: 1;
 }
 .prompt-preview {
