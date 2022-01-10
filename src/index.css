@@ -41,10 +41,14 @@ input[type="number"] {
   color: white;
   background: black;
   border: none;
+  outline: none;
   font-size: 1rem;
   font-family: monospace;
   padding: 0.5rem 1rem;
-   -moz-appearance: textfield;
+  -moz-appearance: textfield;
+}
+input[type="number"]:focus {
+  background: #222;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -77,7 +81,6 @@ section.bash-prompt-preview {
   padding-bottom: 2rem;
 }
 main {
-  min-height: 100vh;
   background: #1c1c1c;
 }
 .container {
@@ -92,7 +95,8 @@ main {
 .selection-indicator {
   position: absolute;
   left: -1rem;
-  line-height: 2rem;
+  font-size: 2rem;
+  line-height: 3rem;
 }
 .six-by-six {
   width: 12rem;

@@ -81,7 +81,7 @@ function BashPromptGenerator() {
             <div className="color-theme">
               {[0, 1, 2, 3].map((ind) => (
                 <div className="color-choice" key={`color-choice-${ind}`}>
-                  {selectedColorInd === ind && <div className="selection-indicator">*</div>}
+                  {selectedColorInd === ind && <div className="selection-indicator">→</div>}
                   <div className="color-preview"
                        style={{ background: COLORS[colors[ind]] }}
                        onMouseDown={() => setSelectedColorInd(ind)}></div>
@@ -125,19 +125,6 @@ function BashPromptGenerator() {
             export PS1="\[\e[38;5;{colors[0]}m\]\u\[\e[38;5;{colors[1]}m\]@\[\e[38;5;{colors[2]}m\]\h
               \[\e[38;5;{colors[3]}m\]\w \[\033[0m\]$ "
           </code>
-        </div>
-      </section>
-
-      <section>
-        <div className="container">
-          <h2>Bash prompt PS1</h2>
-          <p>Put the above in ~/.bashrc or ~/.bash_profile to customize your bash prompt.</p>
-          <p>These are the variable substitutions used above.</p>
-          <pre className="legend">{`
-\\u    username       root
-\\h    hostname       host
-\\w    relative dir   ~/path/to/dir
-          `.trim()}</pre>
         </div>
       </section>
     </>
