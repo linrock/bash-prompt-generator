@@ -164,6 +164,7 @@ export default function() {
             <span className="cmd-separator"
             >$</span>
           </code>
+          <p>To use the prompt, choose between tput and ANSI escape sequences for PS1:</p>
           <code className="prompt-ps1">
             export PS1="\[$(tput setaf {color0})\]\u\[$(tput setaf {color1})\]@\[$(tput setaf {color2})\]\h
               \[$(tput setaf {color3})\]\w \[$(tput sgr0)\]$ "
