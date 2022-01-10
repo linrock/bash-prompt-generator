@@ -1,6 +1,18 @@
 import { useState } from 'react';
 import { COLORS } from './colors';
 
+function sixSquares() {
+  const squares = [[], [], [], [], [], []]
+  let j = 0
+  for (let i = 0; i < 216; i++) {
+    if (i > 0 && i % 6 === 0) {
+      j = (j + 1) % 6
+    }
+    squares[j].push(16 + i)
+  }
+  return squares
+}
+
 export default function() {
   const [selectedColorInd, setSelectedColorInd] = useState(null);
   const [color0, setColor0] = useState(226);
@@ -35,7 +47,6 @@ export default function() {
   // build html for the 256 color squares
   const Squares256 = () => {
     let elements = [];
-
     // 2 rows of 8 for the first 16 basic colors
     for (let j = 0; j < 2; j++) {
       for (let i = 0; i < 8; i++) {
@@ -44,14 +55,14 @@ export default function() {
       }
       elements.push(<div className="clear-left" key={`clear-${j}`}></div>);
     }
-    // 12 rows of length 12
-    for (let j = 0; j < 18; j++) {
-      for (let i = 0; i < 12; i++) {
-        const code = 16 + j*12 + i;
-        elements.push(<Square code={code} key={code} />);
-      }
-      elements.push(<div className="clear-left" key={`clear-${16 + j}`}></div>);
-    }
+    // 6x squares of 6x6 colors each
+    elements = elements.concat(sixSquares().map((sixBySix) => {
+      const elements = [];
+      sixBySix.forEach((code) => elements.push(<Square code={code} key={code} />));
+      return (<div className="six-by-six">{elements}</div>);
+    }));
+    elements.push(<div className="clear-left" key={`clear-6x6`}></div>);
+    // 2 rows of 12 for the last 24 grayscale colors
     for (let j = 0; j < 2; j++) {
       for (let i = 0; i < 12; i++) {
         const code = 232 + j*12 + i;

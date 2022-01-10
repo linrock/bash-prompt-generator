@@ -53,6 +53,11 @@ main {
   left: -1rem;
   line-height: 2rem;
 }
+.six-by-six {
+  width: 12rem;
+  height: 12rem;
+  float: left;
+}
 .square {
   width: 2rem;
   aspect-ratio: 1;
