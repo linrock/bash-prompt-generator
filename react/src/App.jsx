@@ -158,6 +158,12 @@ export default function() {
           PS1="\[$(tput setaf {color0})\]\u\[$(tput setaf {color1})\]@\[$(tput setaf {color2})\]\h
             \[$(tput setaf <span>{color3}</span>)\]\w \[$(tput sgr0)\]$ "
         </code>
+
+        <pre className="legend">{`
+\\u    username       root
+\\h    hostname       host
+\\w    relative dir   ~/path/to/dir
+        `}</pre>
       </section>
     </>
   );
