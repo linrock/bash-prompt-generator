@@ -1,6 +1,7 @@
 # Bash prompt generator
 
 This is a web app for helping you customize the colors in your bash prompt.
+
 See: https://robotmoon.com/bash-prompt-generator
 
 
