@@ -124,7 +124,7 @@ main {
   background: #111;
   padding: 2rem;
 }
-.prompt-ps1 {
+code {
   background: #111;
   padding: 2rem;
 }

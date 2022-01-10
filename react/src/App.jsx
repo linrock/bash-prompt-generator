@@ -166,7 +166,11 @@ export default function() {
           </code>
           <code className="prompt-ps1">
             export PS1="\[$(tput setaf {color0})\]\u\[$(tput setaf {color1})\]@\[$(tput setaf {color2})\]\h
-              \[$(tput setaf <span>{color3}</span>)\]\w \[$(tput sgr0)\]$ "
+              \[$(tput setaf {color3})\]\w \[$(tput sgr0)\]$ "
+          </code>
+          <code className="prompt-ps1-ansi">
+            export PS1="\[\e[38;5;{color0}m\]\u\[\e[38;5;{color1}m\]@\[\e[38;5;{color2}m\]\h
+              \[\e[38;5;{color3}m\]\w \[\033[0m\]$ "
           </code>
         </div>
       </section>
