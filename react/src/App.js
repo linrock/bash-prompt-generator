@@ -1,7 +1,5 @@
 import { useState } from 'react';
-
 import { COLORS } from './colors';
-import './App.css';
 
 export default function() {
   const [selectedColorInd, setSelectedColorInd] = useState(null);
@@ -88,7 +86,6 @@ export default function() {
               <div className="color-preview"
                    style={{ background: COLORS[color0] }}
                    onClick={() => {
-                     console.log('set selected color index 0');
                      setSelectedColorInd(0);
                    }}></div>
               <input type="number" min="0" max="255"
@@ -104,7 +101,6 @@ export default function() {
               <div className="color-preview"
                    style={{ background: COLORS[color1] }}
                    onClick={() => {
-                     console.log('set selected color index 1');
                      setSelectedColorInd(1);
                    }}></div>
               <input type="number" min="0" max="255"
@@ -120,7 +116,6 @@ export default function() {
               <div className="color-preview"
                    style={{ background: COLORS[color2] }}
                    onClick={() => {
-                     console.log('set selected color index 2');
                      setSelectedColorInd(2);
                    }}></div>
               <input type="number" min="0" max="255"
@@ -136,7 +131,6 @@ export default function() {
               <div className="color-preview"
                    style={{ background: COLORS[color3] }}
                    onClick={() => {
-                     console.log('set selected color index 3');
                      setSelectedColorInd(3);
                    }}></div>
               <input type="number" min="0" max="255"
