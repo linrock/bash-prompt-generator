@@ -124,12 +124,20 @@ function BashPromptGenerator() {
           <h2>Bash prompt PS1</h2>
           <p>To try the colors you chose, set the PS1 environment variable in your shell:</p>
           <code className="prompt-ps1">
-            export PS1="\[$(tput setaf {colors[0]})\]\u\[$(tput setaf {colors[1]})\]@\[$(tput setaf {colors[2]})\]\h
-              \[$(tput setaf {colors[3]})\]\w \[$(tput sgr0)\]$ "
+            <span className="export">export </span>
+            <span className="ps1-var">PS1</span>=
+            <span className="bash-string">
+              "\[$(tput setaf <span className="color-code">{colors[0]}</span>)\]\u\[$(tput setaf <span className="color-code">{colors[1]}</span>)\]@\[$(tput setaf <span className="color-code">{colors[2]}</span>)\]\h
+              \[$(tput setaf <span className="color-code">{colors[3]}</span>)\]\w \[$(tput sgr0)\]$ "
+            </span>
           </code>
           <code className="prompt-ps1-ansi">
-            export PS1="\[\e[38;5;{colors[0]}m\]\u\[\e[38;5;{colors[1]}m\]@\[\e[38;5;{colors[2]}m\]\h
-              \[\e[38;5;{colors[3]}m\]\w \[\033[0m\]$ "
+            <span class="export">export </span>
+            <span class="ps1-var">PS1</span>=
+            <span class="bash-string">
+              "\[\e[38;5;<span className="color-code">{colors[0]}</span>m\]\u\[\e[38;5;<span className="color-code">{colors[1]}</span>m\]@\[\e[38;5;<span className="color-code">{colors[2]}</span>m\]\h
+              \[\e[38;5;<span className="color-code">{colors[3]}</span>m\]\w \[\033[0m\]$ "
+            </span>
           </code>
           <p>
             It's up to you to decide between tput and ANSI escape sequences.

@@ -138,6 +138,18 @@ code {
   background: #111;
   padding: 2rem;
 }
+.export {
+  color: rgb(103, 164, 225);
+}
+.ps1-var {
+  color: rgb(132, 170, 170);
+}
+.bash-string {
+  color: rgb(132, 170, 170);
+}
+.color-code {
+  color: rgb(194, 247, 141);
+}
 .legend {
   font-family: monospace;
   line-height: 1.2rem;
