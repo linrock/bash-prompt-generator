@@ -67,11 +67,12 @@ export default function() {
       <section>
         <h2>Bash prompt preview</h2>
         <code className="prompt-preview">
-          <span style={{ color: COLORS[color0] }}
-          >root</span><span style={{ color: COLORS[color1] }}
+          <span style={{ color: COLORS[color0] }} >root</span><span style={{ color: COLORS[color1] }}
           >@</span><span style={{ color: COLORS[color2] }}
           >host</span>
+          &nbsp;
           <span style={{ color: COLORS[color3] }}>~/path/to/dir</span>
+          &nbsp;
           <span className="cmd-separator"
           >$</span>
         </code>
