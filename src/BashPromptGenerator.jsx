@@ -14,11 +14,13 @@ function sixSquares() {
 }
 
 
-function TputColor({ code }) {
-  return <>
-    \[$(tput setaf <span className="color-code">{code}</span>)\]
-  </>;
-}
+const TputColor = ({ code }) => <>
+  \[$(tput setaf <span className="color-code">{code}</span>)\]
+</>;
+
+const AnsiColor = ({ code }) => <>
+  \[\e[38;5;<span className="color-code">{code}</span>m\]
+</>;
 
 function BashPromptGenerator() {
   const [selectedColorInd, setSelectedColorInd] = useState(0);
@@ -134,16 +136,20 @@ function BashPromptGenerator() {
             <span className="export">export </span>
             <span className="ps1-var">PS1</span>=
             <span className="bash-string">
-              <TputColor code={colors[0]} />\u<TputColor code={colors[1]} />@<TputColor code={colors[2]} />\h
-              <TputColor code={colors[3]} />\w \[$(tput sgr0)\]$ "
+              "
+              <TputColor code={colors[0]} />\u
+              <TputColor code={colors[1]} />@
+              <TputColor code={colors[2]} />\h <TputColor code={colors[3]} />\w \[$(tput sgr0)\]$ "
             </span>
           </code>
           <code className="prompt-ps1-ansi">
             <span className="export">export </span>
             <span className="ps1-var">PS1</span>=
             <span className="bash-string">
-              "\[\e[38;5;<span className="color-code">{colors[0]}</span>m\]\u\[\e[38;5;<span className="color-code">{colors[1]}</span>m\]@\[\e[38;5;<span className="color-code">{colors[2]}</span>m\]\h
-              \[\e[38;5;<span className="color-code">{colors[3]}</span>m\]\w \[\033[0m\]$ "
+              "
+              <AnsiColor code={colors[0]} />\u
+              <AnsiColor code={colors[1]} />@
+              <AnsiColor code={colors[2]} />\h <AnsiColor code={colors[3]} />\w \[\033[0m\]$ "
             </span>
           </code>
           <p>
