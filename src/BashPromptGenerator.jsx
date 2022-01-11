@@ -125,7 +125,7 @@ function BashPromptGenerator() {
               </div>
             </div>
 
-            <code className="prompt-ps1">
+            <code className="prompt-ps1 thin-screen-invis">
               <span className="export">export </span>
               <span className="ps1-var">PS1</span>=
               <span className="bash-string">

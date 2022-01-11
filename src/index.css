@@ -27,8 +27,17 @@ body {
 .thin-container {
   width: 480px;
 }
-.wide-container {
-  width: 500px;
+@media screen and (max-width: 1000px) {
+  .fluid-container {
+    display: block;
+    width: 100%;
+  }
+  .thin-container {
+    width: auto;
+  }
+  .thin-screen-invis {
+    display: none;
+  }
 }
 header {
   background: #121212;
