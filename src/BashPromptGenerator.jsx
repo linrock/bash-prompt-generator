@@ -82,11 +82,15 @@ function BashPromptGenerator() {
       <section className="bash-prompt-customize">
         <div className="container">
           <code className="prompt-preview">
-            <span style={{ color: COLORS[colors[0]] }} >user</span><span style={{ color: COLORS[colors[1]] }}
-            >@</span><span style={{ color: COLORS[colors[2]] }}
-            >hostname</span>
+            <span style={{ color: COLORS[colors[0]] }}
+                  onMouseDown={() => setSelectedColorInd(0)}>user</span>
+            <span style={{ color: COLORS[colors[1]] }}
+                  onMouseDown={() => setSelectedColorInd(1)}>@</span>
+            <span style={{ color: COLORS[colors[2]] }}
+                  onMouseDown={() => setSelectedColorInd(2)}>hostname</span>
             &nbsp;
-            <span style={{ color: COLORS[colors[3]] }}>~/path/to/directory</span>
+            <span style={{ color: COLORS[colors[3]] }}
+                  onMouseDown={() => setSelectedColorInd(3)}>~/path/to/directory</span>
             &nbsp;
             <span className="cmd-separator"
             >$</span>
@@ -102,7 +106,7 @@ function BashPromptGenerator() {
             </span>
           </code>
 
-          <div class="color-customizer">
+          <div className="color-customizer">
             <p className="faded">Select a color to customize</p>
             <div className="color-choices">
               {[0, 1, 2, 3].map((ind) => (

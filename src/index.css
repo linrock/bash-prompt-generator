@@ -49,6 +49,9 @@ code {
   line-height: 1.5rem;
   border-radius: 3px;
 }
+.prompt-preview:hover {
+  cursor: pointer;
+}
 input[type="number"] {
   color: #c9c9c9;
   background: #111;
