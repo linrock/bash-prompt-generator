@@ -185,12 +185,14 @@ section.bash-prompt-variables {
   .fluid-container {
     display: block;
     width: 100%;
+    padding: 0 4vw;
   }
   .thin-container {
     width: auto;
   }
   .container {
     width: auto;
+    padding: 0 4vw;
   }
   .thin-screen-invis {
     display: none;
@@ -198,7 +200,18 @@ section.bash-prompt-variables {
   .color-choice {
     width: 20%;
   }
-  .color-preview {
-    aspect-ratio: 3;
+  .colors-256 {
+    width: 72vw;
+    width: 100%;
+  }
+  .six-by-six {
+    width: 24vw;
+    height: 24vw;
+    float: left;
+  }
+  .square {
+    width: 4vw;
+    aspect-ratio: 1;
+    float: left;
   }
 }
