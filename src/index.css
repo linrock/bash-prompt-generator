@@ -119,16 +119,23 @@ main {
 .clear-left {
   clear: left;
 }
+.color-choices {
+  display: flex;
+  justify-content: space-between;
+}
 .color-choice {
   display: flex;
-  margin-right: 3rem;
+  height: 3rem;
 }
 .color-preview {
-  width: 3rem;
+  width: 5rem;
   aspect-ratio: 1;
 }
 .color-preview:hover {
   cursor: pointer;
+}
+.colors-256 {
+  margin-top: 3rem;
 }
 .prompt-preview {
   background: #111;

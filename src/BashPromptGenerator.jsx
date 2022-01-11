@@ -14,13 +14,8 @@ function sixSquares() {
 }
 
 
-const TputColor = ({ code }) => <>
-  \[$(tput setaf <span className="color-code">{code}</span>)\]
-</>;
-
-const AnsiColor = ({ code }) => <>
-  \[\e[38;5;<span className="color-code">{code}</span>m\]
-</>;
+const TputColor = ({ code }) => <>\[$(tput setaf <span className="color-code">{code}</span>)\]</>;
+const AnsiColor = ({ code }) => <>\[\e[38;5;<span className="color-code">{code}</span>m\]</>;
 
 function BashPromptGenerator() {
   const [selectedColorInd, setSelectedColorInd] = useState(0);
@@ -101,29 +96,26 @@ function BashPromptGenerator() {
 
       <div className="container">
         <section>
-          <h2>Customize colors</h2>
-          <div className="color-wrapper">
-            <div className="color-theme">
-              {[0, 1, 2, 3].map((ind) => (
-                <div className="color-choice" key={`color-choice-${ind}`}>
-                  {selectedColorInd === ind && <div className="selection-indicator">→</div>}
-                  <div className="color-preview"
-                       style={{ background: COLORS[colors[ind]] }}
-                       onMouseDown={() => setSelectedColorInd(ind)}></div>
-                  <input type="number" min="0" max="255"
-                         onMouseDown={() => setSelectedColorInd(ind)}
-                         value={colors[ind]} onChange={(event) => {
-                           const code = event.target.value;
-                           if (code >= 0 && code <= 255) {
-                             setColorCodeAt(ind, code);
-                           }
-                         }} />
-                </div>
-              ))}
-            </div>
-            <div className="colors-256">
-              <Squares256 />
-            </div>
+          <div className="color-choices">
+            {[0, 1, 2, 3].map((ind) => (
+              <div className="color-choice" key={`color-choice-${ind}`}>
+                {selectedColorInd === ind && <div className="selection-indicator">→</div>}
+                <div className="color-preview"
+                     style={{ background: COLORS[colors[ind]] }}
+                     onMouseDown={() => setSelectedColorInd(ind)}></div>
+                <input type="number" min="0" max="255"
+                       onMouseDown={() => setSelectedColorInd(ind)}
+                       value={colors[ind]} onChange={(event) => {
+                         const code = event.target.value;
+                         if (code >= 0 && code <= 255) {
+                           setColorCodeAt(ind, code);
+                         }
+                       }} />
+              </div>
+            ))}
+          </div>
+          <div className="colors-256">
+            <Squares256 />
           </div>
         </section>
       </div>
