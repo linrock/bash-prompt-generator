@@ -12,7 +12,7 @@ body {
   padding: 0;
 }
 .container {
-  width: 740px;
+  width: 1000px;
   padding: 0 1.5rem;
   margin: 0 auto;
   position: relative;
@@ -26,18 +26,6 @@ body {
 }
 .thin-container {
   width: 480px;
-}
-@media screen and (max-width: 1000px) {
-  .fluid-container {
-    display: block;
-    width: 100%;
-  }
-  .thin-container {
-    width: auto;
-  }
-  .thin-screen-invis {
-    display: none;
-  }
 }
 header {
   background: #121212;
@@ -154,15 +142,16 @@ section.bash-prompt-variables {
   justify-content: space-between;
   margin-bottom: 1.3rem;
 }
-.color-preview {
+.color-choice {
   width: 5rem;
+}
+.color-preview {
   aspect-ratio: 2;
 }
 .color-preview:hover {
   cursor: pointer;
 }
 .selection-indicator {
-  width: 5rem;
   text-align: center;
   line-height: 3rem;
   font-size: 1.5rem;
@@ -178,4 +167,38 @@ section.bash-prompt-variables {
 }
 .color-code {
   color: rgb(194, 247, 141);
+}
+
+@media screen and (max-width: 1000px) {
+  .colors-256 {
+    width: 18rem;
+  }
+  .fluid-container {
+    width: calc(1000px - 9rem);
+  }
+  .container {
+    width: calc(1000px - 9rem);
+  }
+}
+
+@media screen and (max-width: 872px) {
+  .fluid-container {
+    display: block;
+    width: 100%;
+  }
+  .thin-container {
+    width: auto;
+  }
+  .container {
+    width: auto;
+  }
+  .thin-screen-invis {
+    display: none;
+  }
+  .color-choice {
+    width: 20%;
+  }
+  .color-preview {
+    aspect-ratio: 3;
+  }
 }
