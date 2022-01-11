@@ -50,7 +50,7 @@ input[type="number"] {
   border: none;
   outline: none;
   font-size: 1rem;
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   padding: 0.5rem 1rem;
   -moz-appearance: textfield;
 }
@@ -162,7 +162,7 @@ code {
   color: rgb(194, 247, 141);
 }
 .legend {
-  font-family: monospace;
+  font-family: "IBM Plex Mono", monospace;
   line-height: 1.2rem;
   padding: 2rem;
 }
