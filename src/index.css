@@ -113,13 +113,18 @@ main {
 .clear-left {
   clear: left;
 }
+.faded {
+  margin-bottom: 1.5rem;
+  opacity: 0.5;
+}
 .color-choices {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2rem;
 }
 .color-preview {
   width: 5rem;
-  aspect-ratio: 1;
+  aspect-ratio: 2;
 }
 .color-preview:hover {
   cursor: pointer;

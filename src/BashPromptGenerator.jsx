@@ -27,7 +27,7 @@ function BashPromptGenerator() {
     setColors(colorsCopy);
   }
 
-  // color squares that can be clicked to set the color
+  // color squares that can be clicked to set the currently-selected color
   const Square = ({ code }) => (
     <div className="square"
       style={{ background: COLORS[code] }}
@@ -105,7 +105,7 @@ function BashPromptGenerator() {
 
       <div className="container">
         <section>
-          <p>Click on the color boxes to customize your bash prompt colors</p>
+          <p className="faded">Select a color to customize</p>
           <div className="color-choices">
             {[0, 1, 2, 3].map((ind) => (
               <div className="color-choice" key={`color-choice-${ind}`}>
@@ -126,6 +126,7 @@ function BashPromptGenerator() {
               </div>
             ))}
           </div>
+          <p className="faded">Click to select colors</p>
           <div className="colors-256">
             <Squares256 />
           </div>
