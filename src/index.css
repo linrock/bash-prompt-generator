@@ -37,9 +37,9 @@ h2 {
   opacity: 0.6;
   padding-bottom: 1.5rem;
 }
-pre {
+.prompt-preview, code, pre {
   background: #111;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   font-size: 1rem;
   line-height: 1.5rem;
   border-radius: 3px;
@@ -140,14 +140,6 @@ main {
 }
 .colors-256 {
   margin-top: 2rem;
-}
-.prompt-preview {
-  background: #111;
-  padding: 2rem;
-}
-code {
-  background: #111;
-  padding: 2rem;
 }
 .export {
   color: rgb(103, 164, 225);
