@@ -114,7 +114,7 @@ function BashPromptGenerator() {
                            ref={el => inputsRef.current[ind] = el}
                            onMouseDown={() => setSelectedColorInd(ind)}
                            value={colors[ind]} onChange={(event) => {
-                             const code = event.target.value;
+                             const code = Number(event.target.value);
                              if (code >= 0 && code <= 255) {
                                setColorCodeAt(ind, code);
                              }
