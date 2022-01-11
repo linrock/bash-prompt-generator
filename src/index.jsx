@@ -8,5 +8,5 @@ ReactDOM.render(
   <React.StrictMode>
     <BashPromptGenerator />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('react-mount')
 );

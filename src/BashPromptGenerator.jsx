@@ -79,7 +79,7 @@ function BashPromptGenerator() {
 
   return (
     <>
-      <section className="bash-prompt-preview">
+      <section className="bash-prompt-customize">
         <div className="container">
           <code className="prompt-preview">
             <span style={{ color: COLORS[colors[0]] }} >user</span><span style={{ color: COLORS[colors[1]] }}

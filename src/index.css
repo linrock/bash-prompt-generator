@@ -7,7 +7,7 @@ html {
 body {
   font-family: "IBM Plex Mono", monospace;
   background: #222;
-  color: #f5f5f5;
+  color: #e3e3e3;
   margin: 0;
   padding: 0;
 }
@@ -37,10 +37,15 @@ h2 {
   opacity: 0.6;
   padding-bottom: 1.5rem;
 }
+code {
+  display: block;
+  margin-bottom: 1rem;
+}
 .prompt-preview, code, pre {
   background: #111;
   padding: 1.5rem 2rem;
   font-size: 1rem;
+  font-family: "IBM Plex Mono", monospace;
   line-height: 1.5rem;
   border-radius: 3px;
 }
@@ -75,14 +80,14 @@ a {
   opacity: 0.8;
   font-size: 1rem;
 }
-code {
-  display: block;
-  border-radius: 3px;
-  font-size: 1rem;
-  margin-bottom: 1rem;
+a:hover {
+  opacity: 1;
 }
 section {
   padding: 2rem 0 4rem;
+}
+section.bash-prompt-customize {
+  background: #1c1c1c;
 }
 section.bash-prompt-ps1 {
   background: #181818;
@@ -90,12 +95,6 @@ section.bash-prompt-ps1 {
 }
 section.bash-prompt-variables {
   background: #1e1e1e;
-}
-main {
-  background: #1c1c1c;
-}
-.color-wrapper {
-  display: flex;
 }
 .six-by-six {
   width: 12rem;
@@ -152,9 +151,4 @@ main {
 }
 .color-code {
   color: rgb(194, 247, 141);
-}
-.legend {
-  font-family: "IBM Plex Mono", monospace;
-  line-height: 1.2rem;
-  padding: 2rem;
 }

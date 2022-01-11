@@ -11,14 +11,14 @@
     <title>Bash prompt generator</title>
   </head>
   <body>
-    <main>
-      <header>
-        <div class="container">
-          <h1>Bash prompt generator</h1>
-        </div>
-      </header>
+    <header>
+      <div class="container">
+        <h1>Bash prompt generator</h1>
+      </div>
+    </header>
 
-      <div id="root"></div>
+    <main>
+      <div id="react-mount"></div>
     </main>
 
     <section class="bash-prompt-variables">
@@ -27,7 +27,7 @@
         <p>
           These are the variable substitutions used above.
         </p>
-        <pre className="legend">
+        <pre class="legend">
 \u     user
 \h     hostname
 \w     ~/path/to/dir
