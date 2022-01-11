@@ -97,12 +97,6 @@ main {
 .color-wrapper {
   display: flex;
 }
-.selection-indicator {
-  position: absolute;
-  left: -1rem;
-  font-size: 2rem;
-  line-height: 3rem;
-}
 .six-by-six {
   width: 12rem;
   height: 12rem;
@@ -123,10 +117,6 @@ main {
   display: flex;
   justify-content: space-between;
 }
-.color-choice {
-  display: flex;
-  height: 3rem;
-}
 .color-preview {
   width: 5rem;
   aspect-ratio: 1;
@@ -134,8 +124,14 @@ main {
 .color-preview:hover {
   cursor: pointer;
 }
+.selection-indicator {
+  width: 5rem;
+  text-align: center;
+  line-height: 3rem;
+  font-size: 1.5rem;
+}
 .colors-256 {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 .prompt-preview {
   background: #111;
