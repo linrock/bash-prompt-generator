@@ -13,7 +13,7 @@ body {
 }
 header {
   background: #121212;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 footer {
   background: #151515;
@@ -25,7 +25,7 @@ h1, h2 {
   padding: 0;
 }
 h1 {
-  color: #97ff96;
+  color: #787878;
 }
 h2 {
   opacity: 0.6;

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { COLORS } from './colors';
 
 function sixSquares() {
@@ -20,6 +20,7 @@ const AnsiColor = ({ code }) => <>\[\e[38;5;<span className="color-code">{code}<
 function BashPromptGenerator() {
   const [selectedColorInd, setSelectedColorInd] = useState(0);
   const [colors, setColors] = useState([226, 220, 214, 33]);
+  const inputsRef = useRef(new Array(colors.length));
 
   function setColorCodeAt(index, code) {
     const colorsCopy = colors.slice();
@@ -112,8 +113,15 @@ function BashPromptGenerator() {
                 <div style={{ display: 'flex' }}>
                   <div className="color-preview"
                        style={{ background: COLORS[colors[ind]] }}
-                       onMouseDown={() => setSelectedColorInd(ind)}></div>
+                       onMouseDown={() => {
+                         setTimeout(() => {
+                           inputsRef.current[ind].focus();
+                           inputsRef.current[ind].select();
+                         }, 0);
+                         setSelectedColorInd(ind);
+                       }}></div>
                   <input type="number" min="0" max="255"
+                         ref={el => inputsRef.current[ind] = el}
                          onMouseDown={() => setSelectedColorInd(ind)}
                          value={colors[ind]} onChange={(event) => {
                            const code = event.target.value;
@@ -126,7 +134,7 @@ function BashPromptGenerator() {
               </div>
             ))}
           </div>
-          <p className="faded">Click to select colors</p>
+          <p className="faded">Click to change colors</p>
           <div className="colors-256">
             <Squares256 />
           </div>
