@@ -98,7 +98,6 @@ function BashPromptGenerator() {
             </code>
 
             <div className="color-customizer">
-              <p className="faded">Select a color to customize</p>
               <div className="color-choices">
                 {[0, 1, 2, 3].map((ind) => (
                   <div className="color-choice" key={`color-choice-${ind}`}>
@@ -136,24 +135,10 @@ function BashPromptGenerator() {
                 <TputColor code={colors[2]} />\h <TputColor code={colors[3]} />\w \[$(tput sgr0)\]$ "
               </span>
             </code>
-
-            <code className="prompt-ps1-ansi">
-              <span className="export">export </span>
-              <span className="ps1-var">PS1</span>=
-              <span className="bash-string">
-                "
-                <AnsiColor code={colors[0]} />\u
-                <AnsiColor code={colors[1]} />@
-                <AnsiColor code={colors[2]} />\h <AnsiColor code={colors[3]} />\w \[\033[0m\]$ "
-              </span>
-            </code>
           </div>
 
-          <div className="wide-container">
-            <p className="faded">Click to change colors</p>
-            <div className="colors-256">
-              <Squares256 />
-            </div>
+          <div className="colors-256">
+            <Squares256 />
           </div>
         </div>
       </section>

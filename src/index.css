@@ -19,15 +19,16 @@ body {
 }
 .fluid-container {
   display: flex;
-  width: 1080px;
+  width: 1000px;
+  padding: 0 1.5rem;
   margin: 0 auto;
+  justify-content: space-between;
 }
 .thin-container {
   width: 480px;
 }
 .wide-container {
-  width: 600px;
-  padding-left: 20px;
+  width: 500px;
 }
 header {
   background: #121212;
@@ -113,6 +114,9 @@ section.bash-prompt-ps1 {
 section.bash-prompt-variables {
   background: #1e1e1e;
 }
+.colors-256 {
+  width: 27rem;
+}
 .six-by-six {
   width: 9rem;
   height: 9rem;
@@ -139,7 +143,7 @@ section.bash-prompt-variables {
 .color-choices {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 1.3rem;
 }
 .color-preview {
   width: 5rem;
@@ -153,9 +157,6 @@ section.bash-prompt-variables {
   text-align: center;
   line-height: 3rem;
   font-size: 1.5rem;
-}
-.colors-256 {
-  margin-top: 2rem;
 }
 .export {
   color: rgb(103, 164, 225);
