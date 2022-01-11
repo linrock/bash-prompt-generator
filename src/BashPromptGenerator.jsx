@@ -101,50 +101,49 @@ function BashPromptGenerator() {
               <TputColor code={colors[2]} />\h <TputColor code={colors[3]} />\w \[$(tput sgr0)\]$ "
             </span>
           </code>
-        </div>
-      </section>
 
-      <div className="container">
-        <section>
-          <p className="faded">Select a color to customize</p>
-          <div className="color-choices">
-            {[0, 1, 2, 3].map((ind) => (
-              <div className="color-choice" key={`color-choice-${ind}`}>
-                <div style={{ display: 'flex' }}>
-                  <div className="color-preview"
-                       style={{ background: COLORS[colors[ind]] }}
-                       onMouseDown={() => {
-                         setTimeout(() => {
-                           inputsRef.current[ind].focus();
-                           inputsRef.current[ind].select();
-                         }, 0);
-                         setSelectedColorInd(ind);
-                       }}></div>
-                  <input type="number" min="0" max="255"
-                         ref={el => inputsRef.current[ind] = el}
-                         onMouseDown={() => setSelectedColorInd(ind)}
-                         value={colors[ind]} onChange={(event) => {
-                           const code = event.target.value;
-                           if (code >= 0 && code <= 255) {
-                             setColorCodeAt(ind, code);
-                           }
-                         }} />
+          <div class="color-customizer">
+            <p className="faded">Select a color to customize</p>
+            <div className="color-choices">
+              {[0, 1, 2, 3].map((ind) => (
+                <div className="color-choice" key={`color-choice-${ind}`}>
+                  <div style={{ display: 'flex' }}>
+                    <div className="color-preview"
+                         style={{ background: COLORS[colors[ind]] }}
+                         onMouseDown={() => {
+                           setTimeout(() => {
+                             inputsRef.current[ind].focus();
+                             inputsRef.current[ind].select();
+                           }, 0);
+                           setSelectedColorInd(ind);
+                         }}></div>
+                    <input type="number" min="0" max="255"
+                           ref={el => inputsRef.current[ind] = el}
+                           onMouseDown={() => setSelectedColorInd(ind)}
+                           value={colors[ind]} onChange={(event) => {
+                             const code = event.target.value;
+                             if (code >= 0 && code <= 255) {
+                               setColorCodeAt(ind, code);
+                             }
+                           }} />
+                  </div>
+                  {selectedColorInd === ind && <div className="selection-indicator">↑</div>}
                 </div>
-                {selectedColorInd === ind && <div className="selection-indicator">↑</div>}
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
           <p className="faded">Click to change colors</p>
           <div className="colors-256">
             <Squares256 />
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
-      <section className="bash-prompt-preview">
+      <section className="bash-prompt-ps1">
         <div className="container">
           <h2>Bash prompt PS1</h2>
-          <p>To use the colors you chose, set the PS1 environment variable in your shell:</p>
+          <p>To use the colors you chose, set the PS1 environment variable:</p>
           <code className="prompt-ps1">
             <span className="export">export </span>
             <span className="ps1-var">PS1</span>=

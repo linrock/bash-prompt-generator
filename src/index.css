@@ -11,6 +11,12 @@ body {
   margin: 0;
   padding: 0;
 }
+.container {
+  width: 740px;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+  position: relative;
+}
 header {
   background: #121212;
   padding: 1rem 0;
@@ -39,8 +45,8 @@ pre {
   border-radius: 3px;
 }
 input[type="number"] {
-  color: white;
-  background: black;
+  color: #c9c9c9;
+  background: #111;
   border: none;
   outline: none;
   font-size: 1rem;
@@ -78,7 +84,7 @@ code {
 section {
   padding: 2rem 0 4rem;
 }
-section.bash-prompt-preview {
+section.bash-prompt-ps1 {
   background: #181818;
   padding-bottom: 2rem;
 }
@@ -87,12 +93,6 @@ section.bash-prompt-variables {
 }
 main {
   background: #1c1c1c;
-}
-.container {
-  width: 800px;
-  padding: 0 1.5rem;
-  margin: 0 auto;
-  position: relative;
 }
 .color-wrapper {
   display: flex;
@@ -116,6 +116,9 @@ main {
 .faded {
   margin-bottom: 1.5rem;
   opacity: 0.5;
+}
+.color-customizer {
+  margin-top: 3rem;
 }
 .color-choices {
   display: flex;
