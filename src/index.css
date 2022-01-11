@@ -17,6 +17,18 @@ body {
   margin: 0 auto;
   position: relative;
 }
+.fluid-container {
+  display: flex;
+  width: 1080px;
+  margin: 0 auto;
+}
+.thin-container {
+  width: 480px;
+}
+.wide-container {
+  width: 600px;
+  padding-left: 20px;
+}
 header {
   background: #121212;
   padding: 1rem 0;
@@ -60,6 +72,8 @@ input[type="number"] {
   font-size: 1rem;
   font-family: "IBM Plex Mono", monospace;
   padding: 0.5rem 1rem;
+  width: 100%;
+  text-align: center;
   -moz-appearance: textfield;
 }
 input[type="number"]:focus {
@@ -100,12 +114,12 @@ section.bash-prompt-variables {
   background: #1e1e1e;
 }
 .six-by-six {
-  width: 12rem;
-  height: 12rem;
+  width: 9rem;
+  height: 9rem;
   float: left;
 }
 .square {
-  width: 2rem;
+  width: 1.5rem;
   aspect-ratio: 1;
   float: left;
 }

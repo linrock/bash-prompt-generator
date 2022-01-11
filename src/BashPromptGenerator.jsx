@@ -80,38 +80,28 @@ function BashPromptGenerator() {
   return (
     <>
       <section className="bash-prompt-customize">
-        <div className="container">
-          <code className="prompt-preview">
-            <span style={{ color: COLORS[colors[0]] }}
-                  onMouseDown={() => setSelectedColorInd(0)}>user</span>
-            <span style={{ color: COLORS[colors[1]] }}
-                  onMouseDown={() => setSelectedColorInd(1)}>@</span>
-            <span style={{ color: COLORS[colors[2]] }}
-                  onMouseDown={() => setSelectedColorInd(2)}>hostname</span>
-            &nbsp;
-            <span style={{ color: COLORS[colors[3]] }}
-                  onMouseDown={() => setSelectedColorInd(3)}>~/path/to/directory</span>
-            &nbsp;
-            <span className="cmd-separator"
-            >$</span>
-          </code>
-          <code className="prompt-ps1">
-            <span className="export">export </span>
-            <span className="ps1-var">PS1</span>=
-            <span className="bash-string">
-              "
-              <TputColor code={colors[0]} />\u
-              <TputColor code={colors[1]} />@
-              <TputColor code={colors[2]} />\h <TputColor code={colors[3]} />\w \[$(tput sgr0)\]$ "
-            </span>
-          </code>
+        <div className="fluid-container">
+          <div className="thin-container">
+            <code className="prompt-preview">
+              <span style={{ color: COLORS[colors[0]] }}
+                    onMouseDown={() => setSelectedColorInd(0)}>user</span>
+              <span style={{ color: COLORS[colors[1]] }}
+                    onMouseDown={() => setSelectedColorInd(1)}>@</span>
+              <span style={{ color: COLORS[colors[2]] }}
+                    onMouseDown={() => setSelectedColorInd(2)}>hostname</span>
+              &nbsp;
+              <span style={{ color: COLORS[colors[3]] }}
+                    onMouseDown={() => setSelectedColorInd(3)}>~/path/to/directory</span>
+              &nbsp;
+              <span className="cmd-separator"
+              >$</span>
+            </code>
 
-          <div className="color-customizer">
-            <p className="faded">Select a color to customize</p>
-            <div className="color-choices">
-              {[0, 1, 2, 3].map((ind) => (
-                <div className="color-choice" key={`color-choice-${ind}`}>
-                  <div style={{ display: 'flex' }}>
+            <div className="color-customizer">
+              <p className="faded">Select a color to customize</p>
+              <div className="color-choices">
+                {[0, 1, 2, 3].map((ind) => (
+                  <div className="color-choice" key={`color-choice-${ind}`}>
                     <div className="color-preview"
                          style={{ background: COLORS[colors[ind]] }}
                          onMouseDown={() => {
@@ -130,16 +120,40 @@ function BashPromptGenerator() {
                                setColorCodeAt(ind, code);
                              }
                            }} />
+                    {selectedColorInd === ind && <div className="selection-indicator">↑</div>}
                   </div>
-                  {selectedColorInd === ind && <div className="selection-indicator">↑</div>}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
+
+            <code className="prompt-ps1">
+              <span className="export">export </span>
+              <span className="ps1-var">PS1</span>=
+              <span className="bash-string">
+                "
+                <TputColor code={colors[0]} />\u
+                <TputColor code={colors[1]} />@
+                <TputColor code={colors[2]} />\h <TputColor code={colors[3]} />\w \[$(tput sgr0)\]$ "
+              </span>
+            </code>
+
+            <code className="prompt-ps1-ansi">
+              <span className="export">export </span>
+              <span className="ps1-var">PS1</span>=
+              <span className="bash-string">
+                "
+                <AnsiColor code={colors[0]} />\u
+                <AnsiColor code={colors[1]} />@
+                <AnsiColor code={colors[2]} />\h <AnsiColor code={colors[3]} />\w \[\033[0m\]$ "
+              </span>
+            </code>
           </div>
 
-          <p className="faded">Click to change colors</p>
-          <div className="colors-256">
-            <Squares256 />
+          <div className="wide-container">
+            <p className="faded">Click to change colors</p>
+            <div className="colors-256">
+              <Squares256 />
+            </div>
           </div>
         </div>
       </section>
