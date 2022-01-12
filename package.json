@@ -30,5 +30,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "js-beautify": "^1.14.0",
+    "jsdom": "^19.0.0",
+    "puppeteer": "^13.0.1"
   }
 }
