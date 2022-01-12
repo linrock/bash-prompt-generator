@@ -174,6 +174,33 @@ function BashPromptGenerator() {
           </p>
         </div>
       </section>
+
+      <section className="bash-prompt-examples">
+        <div className="container">
+          <h2>Bash prompt examples</h2>
+          <code className="prompt-preview">
+            <span style={{ color: COLORS[34] }}>user</span>
+            <span style={{ color: COLORS[40] }}>@</span>
+            <span style={{ color: COLORS[46] }}>hostname</span>
+            &nbsp;
+            <span style={{ color: COLORS[154] }}>~/path/to/directory</span>
+            &nbsp;
+            <span className="cmd-separator"
+            >$</span>
+          </code>
+
+          <code className="prompt-ps1">
+            <span className="export">export </span>
+            <span className="ps1-var">PS1</span>=
+            <span className="bash-string">
+              "
+              <TputColor code={34} />\u
+              <TputColor code={40} />@
+              <TputColor code={46} />\h <TputColor code={154} />\w \[$(tput sgr0)\]$ "
+            </span>
+          </code>
+        </div>
+      </section>
     </>
   );
 }
