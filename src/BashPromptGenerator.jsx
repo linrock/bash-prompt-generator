@@ -205,8 +205,25 @@ function BashPromptGenerator() {
       <section className="bash-prompt-examples">
         <div className="container">
           <h2>Bash prompt examples</h2>
+          <p>Here are some example color schemes from choosing 4 colors above.</p>
+
+          <p>Emerald green</p>
           <BashPromptExample colors={[34, 40, 46, 154]} />
+
+          <p>Desert sand</p>
           <BashPromptExample colors={[216, 220, 222, 229]} />
+
+          <p>Ocean blue</p>
+          <BashPromptExample colors={[39, 45, 51, 195]} />
+
+          <p>Fiery orange</p>
+          <BashPromptExample colors={[196, 202, 208, 220]} />
+
+          <p>Violet pink</p>
+          <BashPromptExample colors={[165, 171, 213, 219]} />
+
+          <p>Monochromatic</p>
+          <BashPromptExample colors={[243, 245, 249, 254]} />
         </div>
       </section>
     </>
