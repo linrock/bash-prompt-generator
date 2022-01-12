@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import './style.css';
 import BashPromptGenerator from './BashPromptGenerator';
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <React.StrictMode>
     <BashPromptGenerator />
   </React.StrictMode>,
