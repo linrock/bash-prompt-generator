@@ -215,3 +215,12 @@ section.bash-prompt-variables {
     float: left;
   }
 }
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 0.8rem;
+  }
+  .bash-variable-list {
+    font-size: 0.6rem;
+  }
+}
