@@ -122,6 +122,7 @@ section.bash-prompt-variables {
 .square {
   width: 1.5rem;
   aspect-ratio: 1;
+  touch-action: none;
   float: left;
 }
 .square:hover {
