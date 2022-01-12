@@ -51,13 +51,16 @@ code {
   display: block;
   margin-bottom: 1rem;
 }
+pre {
+  color: #cdcdcd;
+}
 .prompt-preview, code, pre {
   background: #111;
   padding: 1.5rem 2rem;
   font-size: 1rem;
   font-family: "IBM Plex Mono", monospace;
   line-height: 1.5rem;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 .prompt-preview:hover {
   cursor: pointer;
@@ -86,6 +89,7 @@ li {
   line-height: 1.5rem;
 }
 p {
+  color: #b7b7b7;
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 0;
@@ -102,7 +106,7 @@ section {
   padding: 2rem 0 4rem;
 }
 section.bash-prompt-customize {
-  background: #1c1c1c;
+  background: #242424;
 }
 section.bash-prompt-ps1 {
   background: #181818;
