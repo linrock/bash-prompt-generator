@@ -17,6 +17,30 @@ function sixSquares() {
 const TputColor = ({ code }) => <>\[$(tput setaf <span className="color-code">{code}</span>)\]</>;
 const AnsiColor = ({ code }) => <>\[\e[38;5;<span className="color-code">{code}</span>m\]</>;
 
+const BashPromptExample = ({ colors }) => <>
+  <code className="prompt-preview">
+    <span style={{ color: COLORS[colors[0]] }}>user</span>
+    <span style={{ color: COLORS[colors[1]] }}>@</span>
+    <span style={{ color: COLORS[colors[2]] }}>hostname</span>
+    &nbsp;
+    <span style={{ color: COLORS[colors[3]] }}>~/path/to/directory</span>
+    &nbsp;
+    <span className="cmd-separator"
+    >$</span>
+  </code>
+
+  <code className="prompt-ps1">
+    <span className="export">export </span>
+    <span className="ps1-var">PS1</span>=
+    <span className="bash-string">
+      "
+      <TputColor code={colors[0]} />\u
+      <TputColor code={colors[1]} />@
+      <TputColor code={colors[2]} />\h <TputColor code={colors[3]} />\w \[$(tput sgr0)\]$ "
+    </span>
+  </code>
+</>;
+
 function BashPromptGenerator() {
   const [selectedColorInd, setSelectedColorInd] = useState(0);
   const [colors, setColors] = useState([226, 220, 214, 33]);
@@ -178,27 +202,8 @@ function BashPromptGenerator() {
       <section className="bash-prompt-examples">
         <div className="container">
           <h2>Bash prompt examples</h2>
-          <code className="prompt-preview">
-            <span style={{ color: COLORS[34] }}>user</span>
-            <span style={{ color: COLORS[40] }}>@</span>
-            <span style={{ color: COLORS[46] }}>hostname</span>
-            &nbsp;
-            <span style={{ color: COLORS[154] }}>~/path/to/directory</span>
-            &nbsp;
-            <span className="cmd-separator"
-            >$</span>
-          </code>
-
-          <code className="prompt-ps1">
-            <span className="export">export </span>
-            <span className="ps1-var">PS1</span>=
-            <span className="bash-string">
-              "
-              <TputColor code={34} />\u
-              <TputColor code={40} />@
-              <TputColor code={46} />\h <TputColor code={154} />\w \[$(tput sgr0)\]$ "
-            </span>
-          </code>
+          <BashPromptExample colors={[34, 40, 46, 154]} />
+          <BashPromptExample colors={[216, 220, 222, 229]} />
         </div>
       </section>
     </>
