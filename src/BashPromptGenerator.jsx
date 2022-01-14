@@ -20,29 +20,38 @@ const TputReset = () => <>\[$(tput sgr0)\]</>;
 const AnsiColor = ({ code }) => <>\[\e[38;5;<span className="color-code">{code}</span>m\]</>;
 const AnsiReset = () => <>\[\033[0m\]</>;
 
-const BashPromptExample = ({ colors }) => <>
-  <code className="prompt-preview">
-    <span style={{ color: COLORS[colors[0]] }}>user</span>
-    <span style={{ color: COLORS[colors[1]] }}>@</span>
-    <span style={{ color: COLORS[colors[2]] }}>hostname</span>
-    &nbsp;
-    <span style={{ color: COLORS[colors[3]] }}>~/path/to/directory</span>
-    &nbsp;
-    <span className="cmd-separator"
-    >$</span>
-  </code>
+const BashPromptExample = ({ name, colors }) => {
+  const [shouldShowPs1, setShouldShowPs1] = useState(false);
+  return <>
+    <div className="prompt-preview-and-name">
+      <code className="prompt-preview"
+            onClick={() => {
+              setShouldShowPs1(!shouldShowPs1);
+            }}>
+        <span style={{ color: COLORS[colors[0]] }}>user</span>
+        <span style={{ color: COLORS[colors[1]] }}>@</span>
+        <span style={{ color: COLORS[colors[2]] }}>hostname</span>
+        &nbsp;
+        <span style={{ color: COLORS[colors[3]] }}>~/path/to/directory</span>
+        &nbsp;
+        <span className="cmd-separator"
+        >$</span>
+      </code>
+      <h5>{name}</h5>
+    </div>
 
-  <code className="prompt-ps1">
-    <span className="export">export </span>
-    <span className="ps1-var">PS1</span>=
-    <span className="bash-string">
-      "
-      <TputColor code={colors[0]} />\u
-      <TputColor code={colors[1]} />@
-      <TputColor code={colors[2]} />\h <TputColor code={colors[3]} />\w <TputReset />$ "
-    </span>
-  </code>
-</>;
+    <code className="prompt-ps1" style={{ display: shouldShowPs1 ? 'block' : 'none' }}>
+      <span className="export">export </span>
+      <span className="ps1-var">PS1</span>=
+      <span className="bash-string">
+        "
+        <TputColor code={colors[0]} />\u
+        <TputColor code={colors[1]} />@
+        <TputColor code={colors[2]} />\h <TputColor code={colors[3]} />\w <TputReset />$ "
+      </span>
+    </code>
+  </>;
+}
 
 function BashPromptGenerator() {
   const [selectedColorInd, setSelectedColorInd] = useState(0);
@@ -205,25 +214,28 @@ function BashPromptGenerator() {
       <section className="bash-prompt-examples">
         <div className="container">
           <h2>Bash prompt examples</h2>
-          <p>Here are some example color schemes from choosing 4 colors above.</p>
+          <p>
+            Here are some example color schemes from choosing 4 colors above.
+            Click the prompt preview to view the PS1 export.
+          </p>
 
-          <p>Emerald green</p>
-          <BashPromptExample colors={[34, 40, 46, 154]} />
+          <BashPromptExample name="Emerald green"
+            colors={[34, 40, 46, 154]} />
 
-          <p>Desert sand</p>
-          <BashPromptExample colors={[216, 220, 222, 229]} />
+          <BashPromptExample name="Desert sand"
+            colors={[216, 220, 222, 229]} />
 
-          <p>Ocean blue</p>
-          <BashPromptExample colors={[39, 45, 51, 195]} />
+          <BashPromptExample name="Fiery orange"
+            colors={[196, 202, 208, 220]} />
 
-          <p>Fiery orange</p>
-          <BashPromptExample colors={[196, 202, 208, 220]} />
+          <BashPromptExample name="Ocean blue"
+            colors={[39, 45, 51, 195]} />
 
-          <p>Violet pink</p>
-          <BashPromptExample colors={[165, 171, 213, 219]} />
+          <BashPromptExample name="Violet pink"
+            colors={[165, 171, 213, 219]} />
 
-          <p>Monochromatic</p>
-          <BashPromptExample colors={[243, 245, 249, 254]} />
+          <BashPromptExample name="Monochromatic"
+            colors={[243, 245, 249, 254]} />
         </div>
       </section>
     </>

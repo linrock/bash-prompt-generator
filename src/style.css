@@ -54,6 +54,18 @@ code {
 pre {
   color: #cdcdcd;
 }
+.prompt-preview-and-name {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+h5 {
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  margin-left: 4rem;
+}
 .prompt-preview, code, pre {
   background: #111;
   padding: 1.5rem 2rem;
@@ -61,6 +73,9 @@ pre {
   font-family: "IBM Plex Mono", monospace;
   line-height: 1.5rem;
   border-radius: 5px;
+}
+.prompt-preview {
+  margin-bottom: 0;
 }
 .prompt-preview:hover {
   cursor: pointer;
