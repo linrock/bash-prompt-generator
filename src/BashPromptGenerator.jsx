@@ -229,20 +229,29 @@ function BashPromptGenerator() {
           <h2>Bash prompt examples</h2>
           <p>
             Here are some example color schemes from choosing 4 colors above.
-            Click the prompt preview to view the PS1 export.
+            Click the prompt preview to view both the tput and ANSI PS1 exports.
           </p>
 
           <BashPromptExample name="Emerald green"
             colors={[34, 40, 46, 154]} />
 
-          <BashPromptExample name="Desert sand"
-            colors={[216, 220, 222, 229]} />
+          <BashPromptExample name="Lemon line"
+            colors={[47, 156, 227, 231]} />
 
           <BashPromptExample name="Fiery orange"
             colors={[196, 202, 208, 220]} />
 
+          <BashPromptExample name="Autumn leaves"
+            colors={[216, 160, 202, 131]} />
+
+          <BashPromptExample name="Desert sand"
+            colors={[216, 220, 222, 229]} />
+
           <BashPromptExample name="Ocean blue"
             colors={[39, 45, 51, 195]} />
+
+          <BashPromptExample name="Blue green yellow"
+            colors={[39, 81, 77, 226]} />
 
           <BashPromptExample name="Violet pink"
             colors={[165, 171, 213, 219]} />

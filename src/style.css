@@ -246,4 +246,7 @@ section.bash-prompt-variables {
   .bash-variable-list {
     font-size: 0.6rem;
   }
+  h5 {
+    display: none;
+  }
 }
