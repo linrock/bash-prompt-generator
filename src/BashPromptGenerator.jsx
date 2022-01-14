@@ -40,16 +40,29 @@ const BashPromptExample = ({ name, colors }) => {
       <h5>{name}</h5>
     </div>
 
-    <code className="prompt-ps1" style={{ display: shouldShowPs1 ? 'block' : 'none' }}>
-      <span className="export">export </span>
-      <span className="ps1-var">PS1</span>=
-      <span className="bash-string">
-        "
-        <TputColor code={colors[0]} />\u
-        <TputColor code={colors[1]} />@
-        <TputColor code={colors[2]} />\h <TputColor code={colors[3]} />\w <TputReset />$ "
-      </span>
-    </code>
+    <div class="example-ps1-prompts"style={{ display: shouldShowPs1 ? 'block' : 'none' }}>
+      <code className="prompt-ps1">
+        <span className="export">export </span>
+        <span className="ps1-var">PS1</span>=
+        <span className="bash-string">
+          "
+          <TputColor code={colors[0]} />\u
+          <TputColor code={colors[1]} />@
+          <TputColor code={colors[2]} />\h <TputColor code={colors[3]} />\w <TputReset />$ "
+        </span>
+      </code>
+
+      <code className="prompt-ps1">
+        <span className="export">export </span>
+        <span className="ps1-var">PS1</span>=
+        <span className="bash-string">
+          "
+          <AnsiColor code={colors[0]} />\u
+          <AnsiColor code={colors[1]} />@
+          <AnsiColor code={colors[2]} />\h <AnsiColor code={colors[3]} />\w <AnsiReset />$ "
+        </span>
+      </code>
+    </div>
   </>;
 }
 

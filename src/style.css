@@ -80,6 +80,9 @@ h5 {
 .prompt-preview:hover {
   cursor: pointer;
 }
+.example-ps1-prompts {
+  margin-bottom: 3rem;
+}
 input[type="number"] {
   color: #c9c9c9;
   background: #111;
