@@ -24,7 +24,7 @@ const BashPromptExample = ({ name, colors }) => {
   const [shouldShowPs1, setShouldShowPs1] = useState(false);
   return <>
     <div className="prompt-preview-and-name">
-      <code className="prompt-preview"
+      <code className="prompt-preview prompt-preview-example"
             onClick={() => {
               setShouldShowPs1(!shouldShowPs1);
             }}>
@@ -37,7 +37,7 @@ const BashPromptExample = ({ name, colors }) => {
         <span className="cmd-separator"
         >$</span>
       </code>
-      <h5>{name}</h5>
+      <div className="prompt-theme-name">{name}</div>
     </div>
 
     <div class="example-ps1-prompts"style={{ display: shouldShowPs1 ? 'block' : 'none' }}>
@@ -229,7 +229,7 @@ function BashPromptGenerator() {
           <h2>Bash prompt examples</h2>
           <p style={{ marginBottom: '2rem' }}>
             These are some example color schemes from choosing 4 colors above.
-            Click on bash prompt previews to view their tput and ANSI PS1 exports.
+            Click on the bash prompt previews to view their tput and ANSI PS1 exports.
           </p>
 
           <BashPromptExample name="Emerald green"
