@@ -125,6 +125,7 @@ section {
 }
 section.bash-prompt-customize {
   background: #242424;
+  padding: 3rem 0;
 }
 section.bash-prompt-ps1 {
   background: #181818;
