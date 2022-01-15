@@ -163,7 +163,9 @@ section.bash-prompt-variables {
 .color-choices {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1.3rem;
+  padding: 0 2rem;
+  margin-top: -1.3rem;
+  margin-bottom: 2.6rem;
 }
 .color-choice {
   width: 5rem;
