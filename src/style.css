@@ -121,7 +121,7 @@ a:hover {
   opacity: 1;
 }
 section {
-  padding: 2rem 0 4rem;
+  padding: 2rem 0 3rem;
 }
 section.bash-prompt-customize {
   background: #242424;
@@ -129,7 +129,6 @@ section.bash-prompt-customize {
 }
 section.bash-prompt-ps1 {
   background: #181818;
-  padding-bottom: 2rem;
 }
 section.bash-prompt-variables {
   background: #1e1e1e;

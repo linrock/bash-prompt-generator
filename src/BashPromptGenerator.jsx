@@ -195,7 +195,7 @@ function BashPromptGenerator() {
       <section className="bash-prompt-ps1">
         <div className="container">
           <h2>Bash prompt PS1</h2>
-          <p>To use the colors you chose, set the PS1 environment variable:</p>
+          <p>To use the colors you chose, set the PS1 environment variable in your shell:</p>
           <code className="prompt-ps1">
             <span className="export">export </span>
             <span className="ps1-var">PS1</span>=
@@ -227,9 +227,9 @@ function BashPromptGenerator() {
       <section className="bash-prompt-examples">
         <div className="container">
           <h2>Bash prompt examples</h2>
-          <p>
-            Here are some example color schemes from choosing 4 colors above.
-            Click the prompt preview to view both the tput and ANSI PS1 exports.
+          <p style={{ marginBottom: '2rem' }}>
+            These are some example color schemes from choosing 4 colors above.
+            Click on bash prompt previews to view their tput and ANSI PS1 exports.
           </p>
 
           <BashPromptExample name="Emerald green"
