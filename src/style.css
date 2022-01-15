@@ -243,6 +243,12 @@ section.bash-prompt-variables {
     aspect-ratio: 1;
     float: left;
   }
+  .prompt-preview-example {
+    width: 100%;
+  }
+  .prompt-theme-name {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -251,11 +257,5 @@ section.bash-prompt-variables {
   }
   .bash-variable-list {
     font-size: 0.6rem;
-  }
-  .prompt-preview-example {
-    width: 100%;
-  }
-  .prompt-theme-name {
-    display: none;
   }
 }
