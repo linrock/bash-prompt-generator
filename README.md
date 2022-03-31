@@ -1,11 +1,16 @@
 # Bash prompt generator
 
-This is a web app for helping you customize the colors in your bash prompt.
+A web app for customizing the colors of your bash prompt: https://robotmoon.com/bash-prompt-generator
 
-See: https://robotmoon.com/bash-prompt-generator
+Screenshot:
 
-![image](https://user-images.githubusercontent.com/208617/148721682-1b03033e-8276-4a59-9b1f-ba952a24ae1b.png)
+<img width="996" alt="image" src="https://user-images.githubusercontent.com/208617/161115862-aec4d996-0632-4e4f-9ca8-4dca67ad31db.png">
 
+Example PS1 prompt:
+
+```bash
+PS1="\[$(tput setaf 226)\]\u\[$(tput setaf 220)\]@\[$(tput setaf 214)\]\h \[$(tput setaf 33)\]\w \[$(tput sgr0)\]$ "
+```
 
 ## Development
 
